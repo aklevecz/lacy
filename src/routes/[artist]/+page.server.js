@@ -1,5 +1,13 @@
 import data from '$lib/data';
 
+/** @type {import('./$types').EntryGenerator} */
+export function entries() {
+	const artistNames = data.map((artist) => ({
+		artist: artist.name
+	}));
+	return artistNames;
+}
+
 export let prerender = true
 /** @type {import('./$types').PageServerLoad} */
 export async function load({ params }) {
