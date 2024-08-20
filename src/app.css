@@ -1,0 +1,24 @@
+:root {
+  --blue: #00d6ff;
+  --primary-color: var(--blue);
+  --secondary-color: #ff00ff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--blue);
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}

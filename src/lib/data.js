@@ -1,0 +1,96 @@
+const data = [
+  {
+    unit: "102",
+    name: "taka",
+    title: "onishi apparel",
+    description: "taka is a fashion designer and artist.",
+    image: null,
+  },
+  {
+    unit: "104",
+    name: "beau bray",
+    title: "musician",
+    description: "beau bray is a musician.",
+    image: null,
+  },
+  {
+    unit: "109",
+    name: "ariel klevecz",
+    title: "interactive art",
+    description:
+      "ariel klevecz is an interactive artist who creates installations and performances. He is interested in the intersection of art and technology. He is a member of the art collective, the lab. He is also a member of the art collective, the lab.",
+    image: null,
+  },
+  {
+    unit: "110",
+    name: "adam & suezy",
+    title: "vintage clothing & tattoo artist",
+    description: "adam & suezy are a couple who love vintage clothing and tattoos.",
+    image: null,
+  },
+  {
+    unit: "114",
+    name: "super apple pie gallery",
+    title: "mixed media artist",
+    description: "super apple pie gallery is a mixed media artist.",
+    image: null,
+  },
+  {
+    unit: "202",
+    name: "jordan service",
+    title: "photography",
+    description: "jordan service is a photographer.",
+    image: null,
+  },
+  {
+    unit: "203",
+    name: "perhacs studio",
+    title: "design",
+    desciprtion: "perhacs studio is a design studio.",
+    image: null,
+  },
+  {
+    unit: "204",
+    name: "saiful haque",
+    title: "artist",
+    description: "saiful haque is an artist.",
+    image: null,
+  },
+  {
+    unit: "205",
+    name: "swardy & sarah",
+    title: "puppetry & music",
+    description: "sarah is a puppet master. swardy is a musician.",
+    image: null,
+  },
+  {
+    unit: "209",
+    name: "paloma pajaro prey taxidermy",
+    title: "taxidermy studio",
+    description: "paloma pajaro is a taxidermist.",
+    image: null,
+  },
+  {
+    unit: "212",
+    name: "montana bertoletti",
+    title: "mixed media art/stop motion",
+    description: "montana bertoletti is a mixed media artist.",
+    image: null,
+  },
+  {
+    unit: "221",
+    name: "sion kim",
+    title: "tattoo artist",
+    desciption: "sion kim is a tattoo artist.",
+    image: null,
+  },
+  {
+    unit: "306",
+    name: "ms robot",
+    title: "production studio",
+    description: "ms robot is a production studio.",
+    image: null,
+  },
+];
+
+export default data;
