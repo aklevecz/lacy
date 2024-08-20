@@ -23,6 +23,7 @@
   }
 
   onMount(() => {
+    console.log("onMount");
     if (browser) {
       window.addEventListener("resize", handleResize);
       handleResize();
@@ -33,9 +34,18 @@
       for (const unitRec of unitRecs) {
         unitRec.style.fill = "white"
         unitRec.style.opacity = "0.0";
+        const unitNumber = unitRec.id.replace('unit_x5F_', '');
+        const artist = data.find(artist => artist.unit === unitNumber);
+        console.log(unitNumber)
+        if (unitNumber === '209') {
+          console.log("unitRec", unitRec);
+        }
+        if (!artist) {
+          // console.log("No artist found for unit", unitNumber);
+        }
+
         unitRec.addEventListener("click", () => {
-           const unitNumber = unitRec.id.replace('unit_x5F_', '');
-          const artist = data.find(artist => artist.unit === unitNumber);
+          console.log(artist)
           if (artist) {
             const link = `/${artist.name}`;
             goto(link)

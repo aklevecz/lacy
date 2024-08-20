@@ -17,7 +17,7 @@
 </script>
 
 <div class="{orientation.state} container" style="">
-  <a href="/" style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;">Back to Map</a>
+  <a href="/" style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;color:var(--secondary-color);text-decoration:underline;">Back to Map</a>
   <div style="flex:0 0 50%;">
     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;">
       <h2>
