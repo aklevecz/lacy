@@ -46,7 +46,7 @@
     <div class="{orientation.state} description">{description}</div>
     <div style="margin:1rem 0;" class="links">
       {#each artist?.links ?? [] as link}
-        <a href={link.href}>{link.title}</a>
+        <a target="_blank" href={link.href}>{link.title}</a>
       {/each}
     </div>
     <div
