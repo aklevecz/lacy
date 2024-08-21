@@ -1,13 +1,16 @@
 :root {
   --blue: #00d6ff;
+  --black: #32341f;
   --primary-color: var(--blue);
-  --secondary-color: #ff00ff;
+  --secondary-color: var(--black);
+  --accent-color: #ff00ff;
 }
 
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--blue);
+  color: var(--secondary-color);
+  background-color: var(--primary-color);
   font-family: Arial, sans-serif;
 }
 
@@ -21,4 +24,13 @@ h3 {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  font-size: 1rem;
+  background: white;
+  border: 2px solid var(--secondary-color);
+  border:none;
+  border-radius: 50px;
+  padding:.3rem .65rem;
 }

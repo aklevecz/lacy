@@ -5,6 +5,7 @@ const data = [
     title: "onishi apparel",
     description: "taka is a fashion designer and artist.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "104",
@@ -12,6 +13,7 @@ const data = [
     title: "musician",
     description: "beau bray is a musician.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "109",
@@ -20,6 +22,7 @@ const data = [
     description:
       "ariel klevecz is an interactive artist who creates installations and performances. He is interested in the intersection of art and technology. He is a member of the art collective, the lab. He is also a member of the art collective, the lab.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "110",
@@ -27,6 +30,7 @@ const data = [
     title: "vintage clothing & tattoo artist",
     description: "adam & suezy are a couple who love vintage clothing and tattoos.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "114",
@@ -34,6 +38,7 @@ const data = [
     title: "mixed media artist",
     description: "super apple pie gallery is a mixed media artist.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "202",
@@ -41,13 +46,15 @@ const data = [
     title: "photography",
     description: "jordan service is a photographer.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "203",
     name: "perhacs studio",
     title: "design",
-    desciprtion: "perhacs studio is a design studio.",
+    description: "perhacs studio is a design studio.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "204",
@@ -55,6 +62,7 @@ const data = [
     title: "artist",
     description: "saiful haque is an artist.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "205",
@@ -62,6 +70,7 @@ const data = [
     title: "puppetry & music",
     description: "sarah is a puppet master. swardy is a musician.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "209",
@@ -69,6 +78,7 @@ const data = [
     title: "taxidermy studio",
     description: "paloma pajaro is a taxidermist.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "212",
@@ -76,20 +86,23 @@ const data = [
     title: "mixed media art/stop motion",
     description: "montana bertoletti is a mixed media artist.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
     unit: "221",
     name: "sion kim",
     title: "tattoo artist",
-    desciption: "sion kim is a tattoo artist.",
+    description: "sion kim is a tattoo artist.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
   {
-    unit: "306",
+    unit: "306305",
     name: "ms robot",
     title: "production studio",
     description: "ms robot is a production studio.",
     image: null,
+    links: [{ title: "website", href: "https://yourethemannowdog.com" }],
   },
 ];
 

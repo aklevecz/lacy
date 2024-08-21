@@ -15,9 +15,15 @@
   let description = artist?.description || loremIpsum;
   description = loremIpsum;
 </script>
-
+<svelte:head>
+  <title>{capitalizeFirstLetter(artist?.name || "")}</title>
+</svelte:head>
 <div class="{orientation.state} container" style="">
-  <a href="/" style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;color:var(--secondary-color);text-decoration:underline;">Back to Map</a>
+  <a
+    href="/"
+    style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;color:var(--accent-color);text-decoration:underline;"
+    >Back to Map</a
+  >
   <div style="flex:0 0 50%;">
     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;">
       <h2>
@@ -38,6 +44,11 @@
   "
   >
     <div class="{orientation.state} description">{description}</div>
+    <div style="margin:1rem 0;" class="links">
+      {#each artist?.links ?? [] as link}
+        <a href={link.href}>{link.title}</a>
+      {/each}
+    </div>
     <div
       style="
     display: flex;

@@ -26,13 +26,17 @@
       handleResize();
     }})
   </script>
+
+  <svelte:head>
+    <title>Lacy Open Studios</title>
+  </svelte:head>
   {@render children()}
   
 <style>
 :global(.unit) {
-    background: var(--secondary-color);
+    background: var(--accent-color);
     padding: .25rem .5rem;
-    border-radius:30px;
+    /* border-radius:30px; */
     color: white;
 }
 </style>

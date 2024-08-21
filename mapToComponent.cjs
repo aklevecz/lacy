@@ -13,7 +13,7 @@ fs.readFile(svgFilePath, "utf8", (err, data) => {
   }
 
   // Remove the <?xml tag
-  const svgContent = data.replace(/<\?xml.*?\?>/, "").replace('<svg ', '<svg {style} ').replace(/ isolation="isolate"/g, '').trim();
+  const svgContent = data.replace(/<\?xml.*?\?>/, "").replace('<svg ', '<svg {style} ').replace(/ isolation="isolate"/g, '').replace(/text-orientation="sideways-right" /g,'').trim();
 
   // Wrap the SVG content in a Svelte component template
   const svelteComponentContent = `<script>
