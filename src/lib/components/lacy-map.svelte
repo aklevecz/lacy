@@ -1,435 +1,1073 @@
 <script>
+  import { browser } from "$app/environment";
+  import data from "$lib/data";
+  import { onMount } from "svelte";
+  import Modal from "./modal.svelte";
+  import { goto } from "$app/navigation";
+
   /** @type {{style:string}} props */
   let { style } = $props();
+
+  let showDoNotEnter = $state(false);
+  onMount(() => {
+    if (browser) {
+      const allRecs = document.querySelectorAll("rect");
+      const unitRecs = Array.from(allRecs).filter((rec) => rec.id.includes("unit"));
+
+      for (const unitRec of unitRecs) {
+        const unitNumber = unitRec.id.replace("unit_x5F_", "");
+        const artist = data.find((artist) => artist.unit === unitNumber);
+
+        if (artist) {
+          unitRec.style.fill = "green";
+          unitRec.style.opacity = "0.25";
+        } else {
+          unitRec.style.fill = "black";
+          unitRec.style.opacity = "0.75";
+        }
+
+        unitRec.addEventListener("click", () => {
+          if (artist) {
+            const link = `/${artist.name}`;
+            goto(link);
+          } else {
+            showDoNotEnter = true;
+          }
+        });
+      }
+    }
+  });
 </script>
-
-<style>
-    /* Add any necessary styles here */
-</style>
-
+<Modal bind:showModal={showDoNotEnter} title="DO NOT ENTER">
+  <p>Sorry, this is a private studio. Please do not enter.</p>
+</Modal>
 <svg {style} xmlns="http://www.w3.org/2000/svg" width="1440" height="918.37" viewBox="0 0 1440 918.37">
   <g id="Rectangle_1">
     <g id="Rectangle_1-2" data-name="Rectangle_1">
-      <rect x="981.81" y="34.19" width="377.71" height="211.93" fill="#fff"/>
+      <rect x="981.81" y="34.19" width="377.71" height="211.93" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_2">
     <g id="Rectangle_2-2" data-name="Rectangle_2">
-      <rect x="979.99" y="240.23" width="378.59" height="174.6" fill="#fff"/>
+      <rect x="979.99" y="240.23" width="378.59" height="174.6" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_3">
     <g id="Rectangle_3-2" data-name="Rectangle_3">
-      <rect x="1076.1" y="414.46" width="282.16" height="185.47" fill="#fff"/>
+      <rect x="1076.1" y="414.46" width="282.16" height="185.47" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_4">
     <g id="Rectangle_4-2" data-name="Rectangle_4">
-      <rect x="1075.22" y="411.8" width="204.16" height="26.12" fill="#20c300"/>
+      <rect x="1075.22" y="411.8" width="204.16" height="26.12" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_5">
     <g id="Rectangle_5-2" data-name="Rectangle_5">
-      <rect x="977.8" y="213.97" width="382.52" height="24.72" fill="#20c300"/>
+      <rect x="977.8" y="213.97" width="382.52" height="24.72" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_6">
     <g id="Rectangle_6-2" data-name="Rectangle_6">
-      <rect x="1170.61" y="227.52" width="22.56" height="194.78" fill="#20c300"/>
+      <rect x="1170.61" y="227.52" width="22.56" height="194.78" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_7">
     <g id="Rectangle_7-2" data-name="Rectangle_7">
-      <rect x="902.18" y="90.31" width="79.23" height="537.33" fill="#20c300"/>
+      <rect x="902.18" y="90.31" width="79.23" height="537.33" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_8">
     <g id="Rectangle_8-2" data-name="Rectangle_8">
-      <rect x="976.54" y="416.97" width="100.52" height="205.75" fill="#20c300"/>
+      <rect x="976.54" y="416.97" width="100.52" height="205.75" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_22">
     <g id="Rectangle_22-2" data-name="Rectangle_22">
-      <rect x="1358.57" y="214.15" width="30.68" height="404" fill="#20c300"/>
+      <rect x="1358.57" y="214.15" width="30.68" height="404" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_9">
     <g id="Rectangle_9-2" data-name="Rectangle_9">
-      <rect x="901.79" y="627.68" width="52.42" height="252.32" fill="#20c300"/>
+      <rect x="901.79" y="627.68" width="52.42" height="252.32" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_38">
     <g id="Rectangle_38-2" data-name="Rectangle_38">
-      <rect x="947.57" y="600.14" width="441.53" height="213.28" fill="#20c300"/>
+      <rect x="947.57" y="600.14" width="441.53" height="213.28" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_10">
     <g id="Rectangle_10-2" data-name="Rectangle_10">
-      <rect x="299.24" y="249.86" width="57.58" height="470.93" fill="#20c300"/>
+      <rect x="299.24" y="249.86" width="57.58" height="470.93" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_40">
     <g id="Rectangle_40-2" data-name="Rectangle_40">
-      <rect x="-2.3" y="877.86" width="1444.99" height="38.98" fill="#4796df"/>
+      <rect x="-2.3" y="877.86" width="1444.99" height="38.98" fill="#4796df" />
     </g>
   </g>
   <g id="Rectangle_11">
     <g id="Rectangle_11-2" data-name="Rectangle_11">
-      <rect x="348.52" y="624.66" width="605.49" height="23.64" fill="#20c300"/>
+      <rect x="348.52" y="624.66" width="605.49" height="23.64" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_39">
     <g id="Rectangle_39-2" data-name="Rectangle_39">
-      <rect x="951.49" y="746.84" width="437.74" height="132.57" fill="#e00"/>
-      <rect x="951.49" y="746.84" width="437.74" height="132.57" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="951.49" y="746.84" width="437.74" height="132.57" fill="#e00" />
+      <rect x="951.49" y="746.84" width="437.74" height="132.57" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="No_parking">
-    <text transform="translate(1041.49 828.3)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="33.11" font-weight="800"><tspan x="0" y="0">NO PARKING</tspan></text>
+    <text transform="translate(1041.49 828.3)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="33.11" font-weight="800"
+      ><tspan x="0" y="0">NO PARKING</tspan></text
+    >
   </g>
   <g id="Rectangle_12">
     <g id="Rectangle_12-2" data-name="Rectangle_12">
-      <rect x="356.17" y="251.03" width="550.38" height="23.08" fill="#20c300"/>
+      <rect x="356.17" y="251.03" width="550.38" height="23.08" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_13">
     <g id="Rectangle_13-2" data-name="Rectangle_13">
-      <rect x="603.02" y="270.37" width="27.2" height="364.79" fill="#20c300"/>
+      <rect x="603.02" y="270.37" width="27.2" height="364.79" fill="#20c300" />
     </g>
   </g>
   <g id="Rectangle_14">
     <g id="Rectangle_14-2" data-name="Rectangle_14">
-      <rect x="354.67" y="36.3" width="547.52" height="214.36" fill="#fff"/>
+      <rect x="354.67" y="36.3" width="547.52" height="214.36" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_15">
     <g id="Rectangle_15-2" data-name="Rectangle_15">
-      <rect x="356.97" y="274.47" width="246.44" height="350.04" fill="#fff"/>
+      <rect x="356.97" y="274.47" width="246.44" height="350.04" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_16">
     <g id="Rectangle_16-2" data-name="Rectangle_16">
-      <rect x="629.66" y="274.13" width="271.76" height="349.24" fill="#fff"/>
+      <rect x="629.66" y="274.13" width="271.76" height="349.24" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_18">
     <g id="Rectangle_18-2" data-name="Rectangle_18">
-      <rect x="299.71" y="71.13" width="53.1" height="177.82" fill="#fff"/>
+      <rect x="299.71" y="71.13" width="53.1" height="177.82" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_19">
     <g id="Rectangle_19-2" data-name="Rectangle_19">
-      <rect x="341.92" y="71.84" width="24.43" height="177.75" fill="#fff"/>
+      <rect x="341.92" y="71.84" width="24.43" height="177.75" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_20">
     <g id="Rectangle_20-2" data-name="Rectangle_20">
-      <rect x="356.43" y="650.55" width="544.81" height="227.13" fill="#fff"/>
+      <rect x="356.43" y="650.55" width="544.81" height="227.13" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_17">
     <g id="Rectangle_17-2" data-name="Rectangle_17">
-      <rect x="65.4" y="70.07" width="234.28" height="646.75" fill="#fff"/>
+      <rect x="65.4" y="70.07" width="234.28" height="646.75" fill="#fff" />
     </g>
-    <rect x="66.55" y="255.39" width="233.57" height="462.18" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="7"/>
+    <rect x="66.55" y="255.39" width="233.57" height="462.18" fill="#fff" stroke="#000" stroke-miterlimit="10" stroke-width="7" />
   </g>
   <g id="Rectangle_21">
     <g id="Rectangle_21-2" data-name="Rectangle_21">
-      <rect x="175.68" y="221.62" width="182.85" height="30.55" fill="#20c300"/>
+      <rect x="175.68" y="221.62" width="182.85" height="30.55" fill="#20c300" />
     </g>
   </g>
   <g id="_x32_15">
-    <text transform="translate(433.38 335.3)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">215</tspan></text>
+    <text transform="translate(433.38 335.3)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">215</tspan></text
+    >
   </g>
   <g id="_x32_12">
-    <text transform="translate(707.69 423.47)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">212</tspan></text>
+    <text transform="translate(707.69 423.47)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">212</tspan></text
+    >
   </g>
   <g id="_x32_10">
-    <text transform="translate(706.99 507.9)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">210</tspan></text>
+    <text transform="translate(706.99 507.9)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">210</tspan></text
+    >
   </g>
   <g id="_x32_08">
-    <text transform="translate(707.89 590.82)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">208</tspan></text>
+    <text transform="translate(707.89 590.82)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">208</tspan></text
+    >
   </g>
   <g id="_x32_09">
-    <text transform="translate(427.36 590.08)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">209</tspan></text>
+    <text transform="translate(427.36 590.08)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">209</tspan></text
+    >
   </g>
   <g id="_x32_13">
-    <text transform="translate(431.15 420.21)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">213</tspan></text>
+    <text transform="translate(431.15 420.21)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">213</tspan></text
+    >
   </g>
   <g id="_x32_14">
-    <text transform="translate(711.65 334.74)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">214</tspan></text>
+    <text transform="translate(711.65 334.74)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">214</tspan></text
+    >
   </g>
   <g id="_x32_01">
-    <text transform="translate(398.46 723.06)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">201</tspan></text>
+    <text
+      transform="translate(398.46 723.06)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">201</tspan></text
+    >
   </g>
   <g id="_x31_01">
-    <text transform="translate(1110.29 473.45)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">101</tspan></text>
+    <text
+      transform="translate(1110.29 473.45)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">101</tspan></text
+    >
   </g>
   <g id="_x31_02">
-    <text transform="translate(1183.06 471.96)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">102</tspan></text>
+    <text
+      transform="translate(1183.06 471.96)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">102</tspan></text
+    >
   </g>
   <g id="_x31_03">
-    <text transform="translate(1253.28 471.88)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">103</tspan></text>
+    <text
+      transform="translate(1253.28 471.88)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">103</tspan></text
+    >
   </g>
   <g id="_x31_04">
-    <text transform="translate(1317.98 470.36)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">104</tspan></text>
+    <text
+      transform="translate(1317.98 470.36)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">104</tspan></text
+    >
   </g>
   <g id="_x31_15">
-    <text transform="translate(1323.78 82.19)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">115</tspan></text>
+    <text
+      transform="translate(1323.78 82.19)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">115</tspan></text
+    >
   </g>
   <g id="_x31_14">
-    <text transform="translate(1250.75 83.62)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">114</tspan></text>
+    <text
+      transform="translate(1250.75 83.62)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">114</tspan></text
+    >
   </g>
   <g id="_x31_13">
-    <text transform="translate(1177.41 82.77)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">113</tspan></text>
+    <text
+      transform="translate(1177.41 82.77)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">113</tspan></text
+    >
   </g>
   <g id="_x31_12">
-    <text transform="translate(1102.89 82.05)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">112</tspan></text>
+    <text
+      transform="translate(1102.89 82.05)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">112</tspan></text
+    >
   </g>
   <g id="_x32_22">
-    <text transform="translate(860.53 99.72)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">222</tspan></text>
+    <text
+      transform="translate(860.53 99.72)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">222</tspan></text
+    >
   </g>
   <g id="_x32_21">
-    <text transform="translate(783.79 99.11)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">221</tspan></text>
+    <text
+      transform="translate(783.79 99.11)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">221</tspan></text
+    >
   </g>
   <g id="_x32_20">
-    <text transform="translate(708.28 99.67)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">220</tspan></text>
+    <text
+      transform="translate(708.28 99.67)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">220</tspan></text
+    >
   </g>
   <g id="_x33_09">
-    <text transform="translate(304.83 99.13)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">309</tspan></text>
+    <text
+      transform="translate(304.83 99.13)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">309</tspan></text
+    >
   </g>
   <g id="_x33_06_x0D__x26_">
-    <text transform="translate(138.72 302.11)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">306</tspan><tspan x="27.32" y="42">&amp;</tspan></text>
+    <text transform="translate(138.72 302.11)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">306</tspan><tspan x="27.32" y="42">&amp;</tspan></text
+    >
   </g>
   <g id="_x33_05">
-    <text transform="translate(139.01 385.26)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">305</tspan></text>
+    <text transform="translate(139.01 385.26)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">305</tspan></text
+    >
   </g>
   <g id="_x33_04">
-    <text transform="translate(137.83 452.08)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">304</tspan></text>
+    <text transform="translate(137.83 452.08)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">304</tspan></text
+    >
   </g>
   <g id="_x33_03">
-    <text transform="translate(137.31 530.87)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">303</tspan></text>
+    <text transform="translate(137.31 530.87)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">303</tspan></text
+    >
   </g>
   <g id="_x33_02">
-    <text transform="translate(132.82 614.01)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">302</tspan></text>
+    <text transform="translate(132.82 614.01)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">302</tspan></text
+    >
   </g>
   <g id="_x33_01">
-    <text transform="translate(132.13 691.16)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">301</tspan></text>
+    <text transform="translate(132.13 691.16)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">301</tspan></text
+    >
   </g>
   <g id="_x33_08">
-    <text transform="translate(215.98 101.29)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">308</tspan></text>
+    <text
+      transform="translate(215.98 101.29)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">308</tspan></text
+    >
   </g>
   <g id="_x33_07">
-    <text transform="translate(117.48 103.06)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">307</tspan></text>
+    <text
+      transform="translate(117.48 103.06)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">307</tspan></text
+    >
   </g>
   <g id="_x32_19">
-    <text transform="translate(628.46 98.44)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">219</tspan></text>
+    <text
+      transform="translate(628.46 98.44)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">219</tspan></text
+    >
   </g>
   <g id="_x32_18">
-    <text transform="translate(552.21 98.98)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">218</tspan></text>
+    <text
+      transform="translate(552.21 98.98)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">218</tspan></text
+    >
   </g>
   <g id="_x32_17">
-    <text transform="translate(471.9 97.27)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">217</tspan></text>
+    <text
+      transform="translate(471.9 97.27)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">217</tspan></text
+    >
   </g>
   <g id="_x32_16">
-    <text transform="translate(395.21 98.57)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">216</tspan></text>
+    <text
+      transform="translate(395.21 98.57)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">216</tspan></text
+    >
   </g>
   <g id="_x31_11">
-    <text transform="translate(1023.12 82.27)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">111</tspan></text>
+    <text
+      transform="translate(1023.12 82.27)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">111</tspan></text
+    >
   </g>
   <g id="_x32_02">
-    <text transform="translate(467.81 722.56)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">202</tspan></text>
+    <text
+      transform="translate(467.81 722.56)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">202</tspan></text
+    >
   </g>
   <g id="_x32_03">
-    <text transform="translate(542.06 722.9)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">203</tspan></text>
+    <text
+      transform="translate(542.06 722.9)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">203</tspan></text
+    >
   </g>
   <g id="_x32_04">
-    <text transform="translate(618.33 721.19)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">204</tspan></text>
+    <text
+      transform="translate(618.33 721.19)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">204</tspan></text
+    >
   </g>
   <g id="_x32_05">
-    <text transform="translate(691.03 721.97)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">205</tspan></text>
+    <text
+      transform="translate(691.03 721.97)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">205</tspan></text
+    >
   </g>
   <g id="_x32_06">
-    <text transform="translate(771.64 721.58)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">206</tspan></text>
+    <text
+      transform="translate(771.64 721.58)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">206</tspan></text
+    >
   </g>
   <g id="_x32_07">
-    <text transform="translate(851.52 720.35)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800" glyph-orientation-vertical="90deg" writing-mode="tb"><tspan x="0" y="0">207</tspan></text>
+    <text
+      transform="translate(851.52 720.35)"
+      font-family="Arial-Black, &apos;Arial Black&apos;"
+      font-size="42.96"
+      font-weight="800"
+      glyph-orientation-vertical="90deg"
+      writing-mode="tb"><tspan x="0" y="0">207</tspan></text
+    >
   </g>
   <g id="_x32_11">
-    <text transform="translate(430.68 507.24)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">211</tspan></text>
+    <text transform="translate(430.68 507.24)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">211</tspan></text
+    >
   </g>
   <g id="_x31_09">
-    <text transform="translate(1023.88 282.78)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">109</tspan></text>
+    <text transform="translate(1023.88 282.78)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">109</tspan></text
+    >
   </g>
   <g id="_x31_07">
-    <text transform="translate(1026.1 341.8)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">107</tspan></text>
+    <text transform="translate(1026.1 341.8)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">107</tspan></text
+    >
   </g>
   <g id="_x31_05">
-    <text transform="translate(1025.83 401)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">105</tspan></text>
+    <text transform="translate(1025.83 401)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">105</tspan></text
+    >
   </g>
   <g id="_x31_10">
-    <text transform="translate(1230.84 284.82)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">110</tspan></text>
+    <text transform="translate(1230.84 284.82)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">110</tspan></text
+    >
   </g>
   <g id="_x31_08">
-    <text transform="translate(1227.35 343.64)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">108</tspan></text>
+    <text transform="translate(1227.35 343.64)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">108</tspan></text
+    >
   </g>
   <g id="_x31_06">
-    <text transform="translate(1228.06 398.69)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"><tspan x="0" y="0">106</tspan></text>
+    <text transform="translate(1228.06 398.69)" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="42.96" font-weight="800"
+      ><tspan x="0" y="0">106</tspan></text
+    >
   </g>
   <g id="Rectangle_23">
     <g id="Rectangle_23-2" data-name="Rectangle_23">
-      <rect x="629.84" y="274.94" width="270.92" height="349.46" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="629.84" y="274.94" width="270.92" height="349.46" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_24">
     <g id="Rectangle_24-2" data-name="Rectangle_24">
-      <rect x="356.1" y="275.11" width="247.15" height="350.5" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="356.1" y="275.11" width="247.15" height="350.5" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_26">
     <g id="Rectangle_26-2" data-name="Rectangle_26">
-      <rect x="354.71" y="35.95" width="547.22" height="215.53" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="354.71" y="35.95" width="547.22" height="215.53" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_27">
     <g id="Rectangle_27-2" data-name="Rectangle_27">
-      <rect x="980.5" y="238.55" width="190.66" height="176.1" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="980.5" y="238.55" width="190.66" height="176.1" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_28">
     <g id="Rectangle_28-2" data-name="Rectangle_28">
-      <rect x="1192.39" y="238.69" width="166.3" height="172.85" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="1192.39" y="238.69" width="166.3" height="172.85" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_29">
     <g id="Rectangle_29-2" data-name="Rectangle_29">
-      <rect x="981.07" y="34.82" width="379.73" height="179.16" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="981.07" y="34.82" width="379.73" height="179.16" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_30">
     <g id="Rectangle_30-2" data-name="Rectangle_30">
-      <rect x="1075.47" y="437.35" width="282.63" height="162.83" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="1075.47" y="437.35" width="282.63" height="162.83" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_31">
     <g id="Rectangle_31-2" data-name="Rectangle_31">
-      <rect x="64.59" y="69.73" width="288.34" height="154.46" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="64.59" y="69.73" width="288.34" height="154.46" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_34">
     <g id="Rectangle_34-2" data-name="Rectangle_34">
-      <rect x="357.63" y="649.74" width="544.49" height="227.5" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="357.63" y="649.74" width="544.49" height="227.5" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_32">
     <g id="Rectangle_32-2" data-name="Rectangle_32">
-      <rect x="64.86" y="223.08" width="107.48" height="27.62" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="64.86" y="223.08" width="107.48" height="27.62" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_35">
     <g id="Rectangle_35-2" data-name="Rectangle_35">
-      <rect x="1279.09" y="412.46" width="79.57" height="22.64" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="1279.09" y="412.46" width="79.57" height="22.64" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_33">
     <g id="Rectangle_33-2" data-name="Rectangle_33">
-      <rect x="66.96" y="218.14" width="103.03" height="13.54" fill="#fff"/>
+      <rect x="66.96" y="218.14" width="103.03" height="13.54" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_36">
     <g id="Rectangle_36-2" data-name="Rectangle_36">
-      <rect x="1281.42" y="429.04" width="75.19" height="14.65" fill="#fff"/>
+      <rect x="1281.42" y="429.04" width="75.19" height="14.65" fill="#fff" />
     </g>
   </g>
   <g id="Rectangle_47">
     <g id="Rectangle_47-2" data-name="Rectangle_47">
-      <rect x="904.47" y="835.94" width="44.58" height="42.98" fill="#4796df"/>
+      <rect x="904.47" y="835.94" width="44.58" height="42.98" fill="#4796df" />
     </g>
   </g>
   <g id="Rectangle_37">
     <g id="Rectangle_37-2" data-name="Rectangle_37">
-      <rect x="64.26" y="720.38" width="291.35" height="157.32" fill="#e00"/>
-      <rect x="64.26" y="720.38" width="291.35" height="157.32" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="64.26" y="720.38" width="291.35" height="157.32" fill="#e00" />
+      <rect x="64.26" y="720.38" width="291.35" height="157.32" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="no__x0D_Parking">
-    <text transform="translate(181.68 783.23)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="33.1" font-weight="800"><tspan x="0" y="0">NO </tspan><tspan x="-64.54" y="52.81">PARKING</tspan></text>
+    <text transform="translate(181.68 783.23)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="33.1" font-weight="800"
+      ><tspan x="0" y="0">NO </tspan><tspan x="-64.54" y="52.81">PARKING</tspan></text
+    >
   </g>
   <g id="Main_Entrance">
-    <text transform="translate(755.84 907.63)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="30.73" font-weight="800"><tspan x="0" y="0">MAIN ENTRANCE</tspan></text>
+    <text transform="translate(755.84 907.63)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="30.73" font-weight="800"
+      ><tspan x="0" y="0">MAIN ENTRANCE</tspan></text
+    >
   </g>
   <g id="Rectangle_44">
     <g id="Rectangle_44-2" data-name="Rectangle_44">
-      <rect x="902.61" y="597.33" width="119.2" height="16.1" fill="#555"/>
-      <rect x="902.61" y="597.33" width="119.2" height="16.1" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="902.61" y="597.33" width="119.2" height="16.1" fill="#555" />
+      <rect x="902.61" y="597.33" width="119.2" height="16.1" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_43">
     <g id="Rectangle_43-2" data-name="Rectangle_43">
-      <rect x="926.1" y="473.05" width="21.88" height="140.09" fill="#0237e5"/>
-      <rect x="926.1" y="473.05" width="21.88" height="140.09" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="926.1" y="473.05" width="21.88" height="140.09" fill="#0237e5" />
+      <rect x="926.1" y="473.05" width="21.88" height="140.09" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Rectangle_45">
     <g id="Rectangle_45-2" data-name="Rectangle_45">
-      <rect x="903.05" y="90.37" width="76.93" height="122.8" fill="#97c300"/>
-      <rect x="903.05" y="90.37" width="76.93" height="122.8" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7"/>
+      <rect x="903.05" y="90.37" width="76.93" height="122.8" fill="#97c300" />
+      <rect x="903.05" y="90.37" width="76.93" height="122.8" fill="none" stroke="#000" stroke-miterlimit="100" stroke-width="7" />
     </g>
   </g>
   <g id="Court-_x0D_yard">
-    <text transform="translate(955.61 521.03)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="23.56" font-weight="800"><tspan x="0" y="0">COURT-</tspan><tspan x="15.82" y="29.63">YARD</tspan></text>
+    <text transform="translate(955.61 521.03)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="23.56" font-weight="800"
+      ><tspan x="0" y="0">COURT-</tspan><tspan x="15.82" y="29.63">YARD</tspan></text
+    >
   </g>
   <g id="Dog_Walk">
-    <text transform="translate(923.71 148.34)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="12" font-weight="800"><tspan x="0" y="0">DOG </tspan><tspan x="-5.48" y="14.4">WALK</tspan></text>
+    <text transform="translate(923.71 148.34)" fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="12" font-weight="800"
+      ><tspan x="0" y="0">DOG </tspan><tspan x="-5.48" y="14.4">WALK</tspan></text
+    >
   </g>
   <g id="units-2" data-name="units">
-    <rect id="unit_x5F_115" x="1282.83" y="38.26" width="74.4" height="172.27" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".99"/>
-    <rect id="unit_x5F_114" x="1208.33" y="38.26" width="74.4" height="172.27" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".99"/>
-    <rect id="unit_x5F_113" x="1133.82" y="38.26" width="74.4" height="172.27" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".99"/>
-    <rect id="unit_x5F_112" x="1059.31" y="38.26" width="74.4" height="172.27" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".99"/>
-    <rect id="unit_x5F_111" x="984.8" y="38.26" width="74.4" height="172.27" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".99"/>
-    <rect id="unit_x5F_107" x="984.08" y="298.55" width="184.38" height="56.49" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".57"/>
-    <rect id="unit_x5F_105" x="984.08" y="355.18" width="184.38" height="56.49" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".57"/>
-    <rect id="unit_x5F_109" x="984.08" y="241.51" width="184.38" height="56.49" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".57"/>
-    <rect id="unit_x5F_108" x="1196.21" y="297.69" width="158.78" height="54.93" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".52"/>
-    <rect id="unit_x5F_106" x="1196.21" y="352.74" width="158.78" height="54.93" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".52"/>
-    <rect id="unit_x5F_110" x="1196.21" y="242.23" width="158.78" height="54.93" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".52"/>
-    <rect id="unit_x5F_101" x="1078.79" y="440.96" width="69" height="155.52" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".26"/>
-    <rect id="unit_x5F_102" x="1147.79" y="440.96" width="69" height="155.52" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".26"/>
-    <rect id="unit_x5F_103" x="1216.79" y="440.96" width="69" height="155.52" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".26"/>
-    <rect id="unit_x5F_104" x="1285.79" y="440.96" width="69" height="155.52" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".26"/>
-    <rect id="unit_x5F_214" x="633.38" y="278.47" width="263.74" height="85.65" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".13"/>
-    <rect id="unit_x5F_212" x="633.38" y="364.12" width="263.74" height="85.65" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".13"/>
-    <rect id="unit_x5F_210" x="633.38" y="449.77" width="263.74" height="85.65" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".13"/>
-    <rect id="unit_x5F_208" x="633.38" y="535.43" width="263.74" height="85.65" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".13"/>
-    <rect id="unit_x5F_215" x="359.48" y="278.18" width="240.21" height="85.65" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".12"/>
-    <rect id="unit_x5F_213" x="359.48" y="363.83" width="240.21" height="85.65" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".12"/>
-    <rect id="unit_x5F_211" x="359.48" y="449.49" width="240.21" height="85.65" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".12"/>
-    <rect id="unit_x5F_209" x="359.48" y="535.14" width="240.21" height="85.65" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".12"/>
-    <rect id="unit_x5F_201" x="361.18" y="653.07" width="76.77" height="220.54" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".05"/>
-    <rect id="unit_x5F_202" x="437.95" y="653.07" width="76.77" height="220.54" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".05"/>
-    <rect id="unit_x5F_203" x="514.73" y="653.07" width="76.77" height="220.54" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".05"/>
-    <rect id="unit_x5F_204" x="591.5" y="653.07" width="76.77" height="220.54" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".05"/>
-    <rect id="unit_x5F_205" x="668.28" y="653.07" width="76.77" height="220.54" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".05"/>
-    <rect id="unit_x5F_206" x="745.05" y="653.07" width="76.77" height="220.54" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".05"/>
-    <rect id="unit_x5F_207" x="821.82" y="653.07" width="76.77" height="220.54" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".05"/>
-    <rect id="unit_x5F_216" x="358.21" y="39.52" width="77.18" height="208.46" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".02"/>
-    <rect id="unit_x5F_217" x="435.39" y="39.52" width="77.18" height="208.46" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".02"/>
-    <rect id="unit_x5F_218" x="512.56" y="39.52" width="77.18" height="208.46" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".02"/>
-    <rect id="unit_x5F_219" x="589.74" y="39.52" width="77.18" height="208.46" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".02"/>
-    <rect id="unit_x5F_220" x="666.92" y="39.52" width="77.18" height="208.46" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".02"/>
-    <rect id="unit_x5F_221" x="744.09" y="39.52" width="77.18" height="208.46" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".02"/>
-    <rect id="unit_x5F_222" x="821.27" y="39.52" width="77.18" height="208.46" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".02"/>
-    <rect id="unit_x5F_306305" x="70.04" y="258.95" width="226.6" height="140.77" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".02"/>
-    <rect id="unit_x5F_304" x="70.04" y="399.98" width="226.6" height="78.7" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0"/>
-    <rect id="unit_x5F_303" x="70.04" y="478.95" width="226.6" height="78.7" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0"/>
-    <rect id="unit_x5F_302" x="70.04" y="557.91" width="226.6" height="78.7" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0"/>
-    <rect id="unit_x5F_301" x="70.04" y="636.88" width="226.6" height="77.08" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0"/>
-    <rect id="unit_x5F_309" x="255.63" y="73.41" width="93.9" height="147.23" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0"/>
-    <rect id="unit_x5F_308" x="169.99" y="73.53" width="85.72" height="147.23" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0"/>
-    <rect id="unit_x5F_307" x="67.99" y="73.66" width="102" height="173.57" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0"/>
+    <rect
+      id="unit_x5F_115"
+      x="1282.83"
+      y="38.26"
+      width="74.4"
+      height="172.27"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".99"
+    />
+    <rect
+      id="unit_x5F_114"
+      x="1208.33"
+      y="38.26"
+      width="74.4"
+      height="172.27"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".99"
+    />
+    <rect
+      id="unit_x5F_113"
+      x="1133.82"
+      y="38.26"
+      width="74.4"
+      height="172.27"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".99"
+    />
+    <rect
+      id="unit_x5F_112"
+      x="1059.31"
+      y="38.26"
+      width="74.4"
+      height="172.27"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".99"
+    />
+    <rect id="unit_x5F_111" x="984.8" y="38.26" width="74.4" height="172.27" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width=".99" />
+    <rect
+      id="unit_x5F_107"
+      x="984.08"
+      y="298.55"
+      width="184.38"
+      height="56.49"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".57"
+    />
+    <rect
+      id="unit_x5F_105"
+      x="984.08"
+      y="355.18"
+      width="184.38"
+      height="56.49"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".57"
+    />
+    <rect
+      id="unit_x5F_109"
+      x="984.08"
+      y="241.51"
+      width="184.38"
+      height="56.49"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".57"
+    />
+    <rect
+      id="unit_x5F_108"
+      x="1196.21"
+      y="297.69"
+      width="158.78"
+      height="54.93"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".52"
+    />
+    <rect
+      id="unit_x5F_106"
+      x="1196.21"
+      y="352.74"
+      width="158.78"
+      height="54.93"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".52"
+    />
+    <rect
+      id="unit_x5F_110"
+      x="1196.21"
+      y="242.23"
+      width="158.78"
+      height="54.93"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".52"
+    />
+    <rect
+      id="unit_x5F_101"
+      x="1078.79"
+      y="440.96"
+      width="69"
+      height="155.52"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".26"
+    />
+    <rect
+      id="unit_x5F_102"
+      x="1147.79"
+      y="440.96"
+      width="69"
+      height="155.52"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".26"
+    />
+    <rect
+      id="unit_x5F_103"
+      x="1216.79"
+      y="440.96"
+      width="69"
+      height="155.52"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".26"
+    />
+    <rect
+      id="unit_x5F_104"
+      x="1285.79"
+      y="440.96"
+      width="69"
+      height="155.52"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".26"
+    />
+    <rect
+      id="unit_x5F_214"
+      x="633.38"
+      y="278.47"
+      width="263.74"
+      height="85.65"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".13"
+    />
+    <rect
+      id="unit_x5F_212"
+      x="633.38"
+      y="364.12"
+      width="263.74"
+      height="85.65"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".13"
+    />
+    <rect
+      id="unit_x5F_210"
+      x="633.38"
+      y="449.77"
+      width="263.74"
+      height="85.65"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".13"
+    />
+    <rect
+      id="unit_x5F_208"
+      x="633.38"
+      y="535.43"
+      width="263.74"
+      height="85.65"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".13"
+    />
+    <rect
+      id="unit_x5F_215"
+      x="359.48"
+      y="278.18"
+      width="240.21"
+      height="85.65"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".12"
+    />
+    <rect
+      id="unit_x5F_213"
+      x="359.48"
+      y="363.83"
+      width="240.21"
+      height="85.65"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".12"
+    />
+    <rect
+      id="unit_x5F_211"
+      x="359.48"
+      y="449.49"
+      width="240.21"
+      height="85.65"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".12"
+    />
+    <rect
+      id="unit_x5F_209"
+      x="359.48"
+      y="535.14"
+      width="240.21"
+      height="85.65"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".12"
+    />
+    <rect
+      id="unit_x5F_201"
+      x="361.18"
+      y="653.07"
+      width="76.77"
+      height="220.54"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".05"
+    />
+    <rect
+      id="unit_x5F_202"
+      x="437.95"
+      y="653.07"
+      width="76.77"
+      height="220.54"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".05"
+    />
+    <rect
+      id="unit_x5F_203"
+      x="514.73"
+      y="653.07"
+      width="76.77"
+      height="220.54"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".05"
+    />
+    <rect
+      id="unit_x5F_204"
+      x="591.5"
+      y="653.07"
+      width="76.77"
+      height="220.54"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".05"
+    />
+    <rect
+      id="unit_x5F_205"
+      x="668.28"
+      y="653.07"
+      width="76.77"
+      height="220.54"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".05"
+    />
+    <rect
+      id="unit_x5F_206"
+      x="745.05"
+      y="653.07"
+      width="76.77"
+      height="220.54"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".05"
+    />
+    <rect
+      id="unit_x5F_207"
+      x="821.82"
+      y="653.07"
+      width="76.77"
+      height="220.54"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".05"
+    />
+    <rect
+      id="unit_x5F_216"
+      x="358.21"
+      y="39.52"
+      width="77.18"
+      height="208.46"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".02"
+    />
+    <rect
+      id="unit_x5F_217"
+      x="435.39"
+      y="39.52"
+      width="77.18"
+      height="208.46"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".02"
+    />
+    <rect
+      id="unit_x5F_218"
+      x="512.56"
+      y="39.52"
+      width="77.18"
+      height="208.46"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".02"
+    />
+    <rect
+      id="unit_x5F_219"
+      x="589.74"
+      y="39.52"
+      width="77.18"
+      height="208.46"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".02"
+    />
+    <rect
+      id="unit_x5F_220"
+      x="666.92"
+      y="39.52"
+      width="77.18"
+      height="208.46"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".02"
+    />
+    <rect
+      id="unit_x5F_221"
+      x="744.09"
+      y="39.52"
+      width="77.18"
+      height="208.46"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".02"
+    />
+    <rect
+      id="unit_x5F_222"
+      x="821.27"
+      y="39.52"
+      width="77.18"
+      height="208.46"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".02"
+    />
+    <rect
+      id="unit_x5F_306305"
+      x="70.04"
+      y="258.95"
+      width="226.6"
+      height="140.77"
+      fill="none"
+      stroke="#ee3024"
+      stroke-miterlimit="10"
+      stroke-width=".02"
+    />
+    <rect id="unit_x5F_304" x="70.04" y="399.98" width="226.6" height="78.7" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0" />
+    <rect id="unit_x5F_303" x="70.04" y="478.95" width="226.6" height="78.7" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0" />
+    <rect id="unit_x5F_302" x="70.04" y="557.91" width="226.6" height="78.7" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0" />
+    <rect id="unit_x5F_301" x="70.04" y="636.88" width="226.6" height="77.08" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0" />
+    <rect id="unit_x5F_309" x="255.63" y="73.41" width="93.9" height="147.23" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0" />
+    <rect id="unit_x5F_308" x="169.99" y="73.53" width="85.72" height="147.23" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0" />
+    <rect id="unit_x5F_307" x="67.99" y="73.66" width="102" height="173.57" fill="none" stroke="#ee3024" stroke-miterlimit="10" stroke-width="0" />
   </g>
   <g id="_x0D_Event_space">
-    <text fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="30" font-weight="800"><tspan x="963.96" y="675.18">EVENT SPACE</tspan></text>
+    <text fill="#fff" font-family="Arial-Black, &apos;Arial Black&apos;" font-size="30" font-weight="800"
+      ><tspan x="963.96" y="675.18">EVENT SPACE</tspan></text
+    >
   </g>
 </svg>

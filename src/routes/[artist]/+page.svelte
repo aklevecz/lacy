@@ -15,15 +15,14 @@
   let description = artist?.description || loremIpsum;
   description = loremIpsum;
 </script>
+
 <svelte:head>
   <title>{capitalizeFirstLetter(artist?.name || "")}</title>
 </svelte:head>
 <div class="{orientation.state} container" style="">
-  <a
-    href="/"
-    style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;color:var(--accent-color);text-decoration:underline;"
+  <!-- <a href="/" style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;text-decoration:underline;"
     >Back to Map</a
-  >
+  > -->
   <div style="flex:0 0 50%;">
     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;">
       <h2>
@@ -44,25 +43,32 @@
   "
   >
     <div class="{orientation.state} description">{description}</div>
-    <div style="margin:1rem 0;" class="links">
+    <!-- <div style="margin:1rem 0;" class="links">
       {#each artist?.links ?? [] as link}
         <a target="_blank" href={link.href}>{link.title}</a>
       {/each}
-    </div>
+    </div> -->
     <div
       style="
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     justify-content: space-around;
     margin-top: 1rem;
     flex: 1;
-    align-items: end;"
+    align-items: center;"
     >
+      {#each artist?.links ?? [] as link}
+        <a class="link-button" target="_blank" href={link.href}>{link.title}</a>
+      {/each}
       {#each ["insta", "twitter"] as link}
-        <a href={link}><img style="width:40px;" alt={`${link} icon`} src={`/icons/${link}-icon.svg`} /></a>
+        <a class="link-button" href={link}><img style="width:40px;" alt={`${link} icon`} src={`/icons/${link}-icon.svg`} /></a>
       {/each}
     </div>
   </div>
+</div>
+<div style="margin:1rem;">
+  <a href="/" style="align-self:flex-start;text-decoration:underline;">Back to Map</a>
 </div>
 
 <style>
@@ -94,5 +100,20 @@
 
   .description.landscape {
     margin-top: 1.75rem;
+  }
+
+  a.link-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 45px;
+    text-align: center;
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    background: var(--accent-color);
+    color: var(--primary-color);
+    color: black;
+    font-size: 1.25rem;
   }
 </style>

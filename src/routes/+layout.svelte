@@ -27,16 +27,22 @@
     }})
   </script>
 
-  <svelte:head>
-    <title>Lacy Open Studios</title>
-  </svelte:head>
+
   {@render children()}
-  
+  <footer style="display:{orientation === 'portrait' ? "block" : "none"}">
+    LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS 
+  </footer>
 <style>
 :global(.unit) {
     background: var(--accent-color);
     padding: .25rem .5rem;
     /* border-radius:30px; */
     color: white;
+}
+footer {
+      background: black;
+    color: white;
+    padding: 1rem;
+    font-weight: bold;
 }
 </style>
