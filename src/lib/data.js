@@ -34,11 +34,17 @@ const data = [
   },
   {
     unit: "114",
-    name: "super apple pie gallery",
+    name: "S.A.P. Gallery",
     title: "mixed media artist",
-    description: "super apple pie gallery is a mixed media artist.",
-    image: null,
-    links: [{ title: "website", href: "/melon.webp" }],
+    description: "Welcome Super Apple Pie Gallery, Join us for an evening of diverse artistic expression. This group art show features a captivating mix of photography, paintings, and handmade clothing, exploring a range of adult themes. Experience a unique blend of creativity and craftsmanship, and engage with thought-provoking works that challenge and inspire. Don’t miss this opportunity to immerse yourself in an eclectic and dynamic collection of art. featuring artists",
+    image: '/artist/sap.jpg',
+    links: [{ title: "website", href: "https://www.superapplepieartgallery.com" },
+      {title:"@superapplepiegallery", href:"https://instagram.com/superapplepiegallery"},
+      {title:"@divalicious", href:"https://instagram.com/divalicious"},
+      {title:"@arinicholeartisty", href:"https://instagram.com/arinicholeartisty"},
+      {title:"@nickvrunge", href:"https://instagram.com/nickvrunge"},
+      {title:"@elliottevan", href:"https://instagram.com/elliottevan"}
+    ],
   },
   {
     unit: "202",

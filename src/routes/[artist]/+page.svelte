@@ -13,7 +13,6 @@
 `;
 
   let description = artist?.description || loremIpsum;
-  description = loremIpsum;
 </script>
 
 <svelte:head>
@@ -24,12 +23,12 @@
     >Back to Map</a
   > -->
   <div style="flex:0 0 50%;">
+    <div class="unit">{artist?.unit}</div>
     <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;">
-      <h2>
+      <h1>
         {capitalizeFirstLetter(artist?.name || "")}
         <!-- <span class="unit">{artist?.unit}</span> -->
-      </h2>
-      <div class="unit">{artist?.unit}</div>
+      </h1>
     </div>
     <!-- <div>{artist?.unit}</div> -->
     <img class="img {orientation.state}" alt="{artist?.name} the artist" src={artist?.image ?? "/owl.png"} style="" />
@@ -61,9 +60,6 @@
       {#each artist?.links ?? [] as link}
         <a class="link-button" target="_blank" href={link.href}>{link.title}</a>
       {/each}
-      {#each ["insta", "twitter"] as link}
-        <a class="link-button" href={link}><img style="width:40px;" alt={`${link} icon`} src={`/icons/${link}-icon.svg`} /></a>
-      {/each}
     </div>
   </div>
 </div>
@@ -80,6 +76,18 @@
     min-height: 80vh;
   }
 
+  h1 {
+    font-size: 3rem;
+  }
+  .unit {
+    font-size: 1.25rem;
+    font-weight: bold;
+    letter-spacing: 0.25rem;
+    text-align: end;
+    padding: 8px;
+    margin-bottom: 8px;
+    margin-right: 12px;
+  }
   .container.landscape {
     flex-direction: row;
   }
@@ -95,7 +103,8 @@
   }
 
   .description {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    line-height: calc(1.5rem * 1.1);
   }
 
   .description.landscape {
@@ -106,14 +115,15 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 100px;
-    height: 45px;
+    min-width: 100px;
+    height: 35px;
     text-align: center;
     padding: 0.5rem 1rem;
     border-radius: 50px;
-    background: var(--accent-color);
+    /* background: var(--accent-color); */
+    /* color: var(--primary-color); */
+    background: var(--secondary-color);
     color: var(--primary-color);
-    color: black;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 </style>
