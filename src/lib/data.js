@@ -21,8 +21,8 @@ const data = [
     title: "interactive art",
     description:
       "ariel klevecz is an interactive artist who creates installations and performances. He is interested in the intersection of art and technology. He is a member of the art collective, the lab. He is also a member of the art collective, the lab.",
-    image: null,
-    links: [{ title: "website", href: "/melon.webp" }],
+    image: "/artist/bao-scientist.png",
+    links: [{ title: "yaytso.art", href: "https://yaytso.art" }],
   },
   {
     unit: "110",
@@ -38,7 +38,7 @@ const data = [
     title: "mixed media artist",
     description: "Welcome Super Apple Pie Gallery, Join us for an evening of diverse artistic expression. This group art show features a captivating mix of photography, paintings, and handmade clothing, exploring a range of adult themes. Experience a unique blend of creativity and craftsmanship, and engage with thought-provoking works that challenge and inspire. Don’t miss this opportunity to immerse yourself in an eclectic and dynamic collection of art. featuring artists",
     image: '/artist/sap.jpg',
-    links: [{ title: "website", href: "https://www.superapplepieartgallery.com" },
+    links: [{ title: "superapplepieartgallery.com", href: "https://www.superapplepieartgallery.com" },
       {title:"@superapplepiegallery", href:"https://instagram.com/superapplepiegallery"},
       {title:"@divalicious", href:"https://instagram.com/divalicious"},
       {title:"@arinicholeartisty", href:"https://instagram.com/arinicholeartisty"},

@@ -80,13 +80,13 @@
     font-size: 3rem;
   }
   .unit {
-    font-size: 1.25rem;
-    font-weight: bold;
+    font-size: 1.5rem;
+    font-weight: 500;
     letter-spacing: 0.25rem;
     text-align: end;
     padding: 8px;
     margin-bottom: 8px;
-    margin-right: 12px;
+    /* margin-right: 12px; */
   }
   .container.landscape {
     flex-direction: row;
