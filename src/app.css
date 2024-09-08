@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'SF Pro Rounded';
-  src: url('%sveltekit.assets%/fonts/SF-Pro-Rounded-Regular.otf') format('opentype');
+  src: url('/fonts/SF-Pro-Rounded-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
 }
