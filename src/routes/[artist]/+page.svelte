@@ -51,7 +51,7 @@
       style="
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     justify-content: space-around;
     margin-top: 1rem;
     flex: 1;
@@ -77,7 +77,7 @@
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
   .unit {
     font-size: 1.5rem;
@@ -105,6 +105,7 @@
   .description {
     font-size: 1.5rem;
     line-height: calc(1.5rem * 1.1);
+    margin-bottom:1rem;
   }
 
   .description.landscape {
@@ -124,6 +125,6 @@
     /* color: var(--primary-color); */
     background: var(--secondary-color);
     color: var(--primary-color);
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 </style>

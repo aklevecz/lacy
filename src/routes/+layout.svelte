@@ -29,8 +29,8 @@
 
 
   {@render children()}
-  <footer style="display:{orientation === 'portrait' ? "block" : "none"}">
-    LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS LOS 
+  <footer style="display:{orientation === 'portrait' ? "block" : "none"};font-size:2rem;text-align:center;">
+    LOS 2024
   </footer>
 <style>
 :global(.unit) {
@@ -40,7 +40,7 @@
     color: white;
 }
 footer {
-      background: black;
+      background: var(--secondary-color);
     color: white;
     padding: 1rem;
     font-weight: bold;
