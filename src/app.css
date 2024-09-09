@@ -15,7 +15,7 @@ body {
   color: var(--secondary-color);
   background-color: var(--primary-color);
   font-family: Arial, sans-serif;
-  font-family: SF Pro Rounded;
+  font-family: SF Pro Rounded, sans-serif;
 }
 
 h1,

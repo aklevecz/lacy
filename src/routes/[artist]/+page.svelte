@@ -13,10 +13,17 @@
 `;
 
   let description = artist?.description || loremIpsum;
+  let domain = "https://lacy-eqq.pages.dev"
 </script>
 
 <svelte:head>
   <title>{capitalizeFirstLetter(artist?.name || "")}</title>
+
+  <meta property="og:title" content={capitalizeFirstLetter(artist?.name || "")} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={domain + artist?.image ?? "/owl.png"} />
+
+
 </svelte:head>
 <div class="{orientation.state} container" style="">
   <!-- <a href="/" style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;text-decoration:underline;"
