@@ -11,16 +11,22 @@
 <svelte:head>
   <title>Lacy Open Studios</title>
   <meta property="og:title" content="Lacy Open Studios" />
-  <meta property="og:description" content="Welcome to the 2nd Lacy Open Studios! Below is a map indicating the participating studios. We encourage you to check out each studio at your own pace. Please be mindful that these are people's livingspaces and to not disturb studios that are not participating." />
+  <meta
+    property="og:description"
+    content="Welcome to the 2nd Lacy Open Studios! Below is a map indicating the participating studios. We encourage you to check out each studio at your own pace. Please be mindful that these are people's livingspaces and to not disturb studios that are not participating."
+  />
   <meta property="og:image" content={"/seo-img.png"} />
-
 </svelte:head>
-<div class={orientationSvelte.state} style="display:flex;min-height:{orientationSvelte.dimensions.height}px;padding:1rem;">
+<div
+  class={orientationSvelte.state}
+  style="display:flex;min-height:{orientationSvelte.dimensions.height}px;padding:1rem;"
+>
   <div class="before" style="flex: 0 1;">
     <h2>LACY OPEN STUDIOS</h2>
     <p>
-      Welcome to the 2nd Lacy Open Studios! Below is a map indicating the participating studios. We encourage you to check out each studio at your own
-      pace. Please be mindful that these are people's livingspaces and to not disturb studios that are not participating.
+      Welcome to the 2nd Lacy Open Studios! Below is a map indicating the participating studios. We encourage you to
+      check out each studio at your own pace. Please be mindful that these are people's livingspaces and to not disturb
+      studios that are not participating.
     </p>
   </div>
   <div class="map" style="display:flex;justify-content:center;">
@@ -41,11 +47,20 @@
 </div>
 
 <style>
+  h2 {
+    text-align: center;
+    background: var(--black);
+    color: var(--accent-color);
+    padding: 8px;
+  }
   .portrait {
     flex-direction: column;
   }
   .portrait > div {
     flex: 1 0 33%;
+  }
+  .landscape .map {
+    height: 90vh;
   }
   .landscape > .before {
     display: none;

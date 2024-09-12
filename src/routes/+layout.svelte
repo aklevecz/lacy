@@ -41,7 +41,7 @@
 }
 footer {
       background: var(--secondary-color);
-    color: white;
+    color: var(--accent-color);
     padding: 1rem;
     font-weight: bold;
 }

@@ -13,7 +13,7 @@
 `;
 
   let description = artist?.description || loremIpsum;
-  let domain = "https://lacy-eqq.pages.dev"
+  let domain = "https://lacy-eqq.pages.dev";
 </script>
 
 <svelte:head>
@@ -22,40 +22,41 @@
   <meta property="og:title" content={capitalizeFirstLetter(artist?.name || "")} />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={domain + artist?.image ?? "/owl.png"} />
-
-
 </svelte:head>
 <div class="{orientation.state} container" style="">
   <!-- <a href="/" style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;text-decoration:underline;"
     >Back to Map</a
   > -->
-  <div style="flex:0 0 50%;">
+  <!-- <div class="top"> -->
+  <div class="top-line">
     <div class="unit">{artist?.unit}</div>
-    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.75rem;">
+    <div class="artist-name">
       <h1>
         {capitalizeFirstLetter(artist?.name || "")}
         <!-- <span class="unit">{artist?.unit}</span> -->
       </h1>
     </div>
-    <!-- <div>{artist?.unit}</div> -->
-    <img class="img {orientation.state}" alt="{artist?.name} the artist" src={artist?.image ?? "/owl.png"} style="" />
   </div>
-  <div
-    style="
+  <!-- <div>{artist?.unit}</div> -->
+  <div class="content">
+    <img class="img {orientation.state}" alt="{artist?.name} the artist" src={artist?.image ?? "/owl.png"} style="" />
+    <!-- </div> -->
+    <div
+      style="
   display:flex;
   flex-direction:column;
   flex:1;
   padding:0 .5rem;
   "
-  >
-    <div class="{orientation.state} description">{description}</div>
-    <!-- <div style="margin:1rem 0;" class="links">
+    >
+      <div class="{orientation.state} description">{description}</div>
+      <!-- <div style="margin:1rem 0;" class="links">
       {#each artist?.links ?? [] as link}
         <a target="_blank" href={link.href}>{link.title}</a>
       {/each}
     </div> -->
-    <div
-      style="
+      <div
+        style="
     display: flex;
     flex-direction: column;
     gap: 2rem;
@@ -63,10 +64,11 @@
     margin-top: 1rem;
     flex: 1;
     align-items: center;"
-    >
-      {#each artist?.links ?? [] as link}
-        <a class="link-button" target="_blank" href={link.href}>{link.title}</a>
-      {/each}
+      >
+        {#each artist?.links ?? [] as link}
+          <a class="link-button" target="_blank" href={link.href}>{link.title}</a>
+        {/each}
+      </div>
     </div>
   </div>
 </div>
@@ -79,13 +81,33 @@
     display: flex;
     flex-direction: column;
     padding: 1rem;
-    gap: 1rem;
+    /* gap: 1rem; */
     min-height: 80vh;
   }
 
-  h1 {
-    font-size: 2.5rem;
+  .container.landscape {
+    /* flex-direction: row; */
   }
+
+  .top {
+    flex: 0 0 50%;
+  }
+  
+  .landscape .top-line {
+    display: flex;
+    flex: 0 0 100%;
+    gap: 1rem;
+  }
+
+  .landscape .content {
+    display: flex;
+    flex-direction: row;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
   .unit {
     font-size: 1.5rem;
     font-weight: 500;
@@ -93,10 +115,17 @@
     text-align: end;
     padding: 8px;
     margin-bottom: 8px;
+    order: 1;
+    flex: 1 0 auto;
     /* margin-right: 12px; */
   }
-  .container.landscape {
-    flex-direction: row;
+
+  .artist-name {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+    order:0;
   }
 
   .img {
@@ -106,17 +135,20 @@
   }
 
   .img.landscape {
-    height: 70vh;
+    /* height: 70vh; */
+    width: 50%;
+    max-height: 70vh;
   }
 
   .description {
     font-size: 1.5rem;
     line-height: calc(1.5rem * 1.1);
-    margin-bottom:1rem;
+    margin-top:1rem;
+    margin-bottom: 1rem;
   }
 
   .description.landscape {
-    margin-top: 1.75rem;
+    margin-top: 0rem;
   }
 
   a.link-button {
