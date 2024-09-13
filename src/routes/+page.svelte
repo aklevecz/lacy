@@ -1,5 +1,6 @@
 <script>
   import ArtistList from "$lib/components/artist-list.svelte";
+  import Smiler from "$lib/components/icons/smiler.svelte";
   import IndexInfo from "$lib/components/index-info.svelte";
   import LacyMap from "$lib/components/lacy-map.svelte";
   import orientationSvelte from "$lib/stores/orientation.svelte";
@@ -22,11 +23,10 @@
   style="display:flex;min-height:{orientationSvelte.dimensions.height}px;padding:1rem;"
 >
   <div class="before" style="flex: 0 1;">
-    <h2>LACY OPEN STUDIOS</h2>
+    <h1>LACY OPEN STUDIOS</h1>
     <p>
-      Welcome to the 2nd Lacy Open Studios! Below is a map indicating the participating studios. We encourage you to
-      check out each studio at your own pace. Please be mindful that these are people's livingspaces and to not disturb
-      studios that are not participating.
+      Welcome to the 2nd Lacy Open Studios! You can see the participating studios on the map below. We encourage you to
+      check out each studio at your own pace. Be mindful that these are people's livingspaces as well <Smiler />
     </p>
   </div>
   <div class="map" style="display:flex;justify-content:center;">
@@ -47,9 +47,9 @@
 </div>
 
 <style>
-  h2 {
+  h1 {
     text-align: center;
-    background: var(--black);
+    /* background: var(--black); */
     color: var(--accent-color);
     padding: 8px;
   }

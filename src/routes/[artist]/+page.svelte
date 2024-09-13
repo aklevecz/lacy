@@ -66,14 +66,14 @@
     align-items: center;"
       >
         {#each artist?.links ?? [] as link}
-          <a class="link-button" target="_blank" href={link.href}>{link.title}</a>
+          <a class="link-button" href={link.href}>{link.title}</a>
         {/each}
       </div>
     </div>
   </div>
 </div>
 <div style="margin:1rem;">
-  <a href="/" style="align-self:flex-start;text-decoration:underline;">Back to Map</a>
+  <a href="/" style="align-self:flex-start;text-decoration:none;font-weight:500;font-size:1.25rem;"><img style="width:30px;height:30px;" src="/icons/back-arrow.svg" alt="back arrow"> to Map</a>
 </div>
 
 <style>

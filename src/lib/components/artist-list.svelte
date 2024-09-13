@@ -8,7 +8,10 @@
     <a href={`/${artist.name}`} class="artist">
       <div style="display:flex;gap:.5rem;align-items: center;">
         <div class="unit">
-          {artist.unit}
+          <!-- {artist.unit} -->
+           {#each artist.unit.split(',') as unit}
+            <div>{unit}</div>
+          {/each}
         </div>
       </div>
       <div>

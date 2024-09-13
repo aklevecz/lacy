@@ -29,8 +29,12 @@
 
 
   {@render children()}
-  <footer style="display:{orientation === 'portrait' ? "block" : "none"};font-size:2rem;text-align:center;">
-    LOS 2024
+  {#snippet smilerSnip()}
+    <img style="width:30px;height:30px;margin-bottom:-6px;" src="/icons/smiler.svg" alt="smiler"> 
+  {/snippet}
+  <footer style="display:{orientation === 'portrait' ? "block" : "none"};font-size:1.5rem;text-align:center;">
+   <div>~ LOS 2024 ~ ENJOY ART ~</div>
+   <div> ~ SUPPORT ARTISTS ~ </div>
   </footer>
 <style>
 :global(.unit) {
@@ -40,7 +44,7 @@
     color: white;
 }
 footer {
-      background: var(--secondary-color);
+      /* background: var(--secondary-color); */
     color: var(--accent-color);
     padding: 1rem;
     font-weight: bold;
