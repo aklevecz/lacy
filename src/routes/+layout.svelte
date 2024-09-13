@@ -3,6 +3,7 @@
   import { onMount } from "svelte";
     import "../app.css"
   import { browser } from "$app/environment";
+  import Smiler from "$lib/components/icons/smiler.svelte";
     /** @type {{data:import('./$types').LayoutData, children:any}} */
     let { children } = $props();
 
@@ -33,8 +34,7 @@
     <img style="width:30px;height:30px;margin-bottom:-6px;" src="/icons/smiler.svg" alt="smiler"> 
   {/snippet}
   <footer style="display:{orientation === 'portrait' ? "block" : "none"};font-size:1.5rem;text-align:center;">
-   <div>~ LOS 2024 ~ ENJOY ART ~</div>
-   <div> ~ SUPPORT ARTISTS ~ </div>
+   <div>{@render smilerSnip()} ~ LOS 2024 ~ {@render smilerSnip()}</div>
   </footer>
 <style>
 :global(.unit) {
@@ -44,7 +44,7 @@
     color: white;
 }
 footer {
-      /* background: var(--secondary-color); */
+      background: var(--secondary-color);
     color: var(--accent-color);
     padding: 1rem;
     font-weight: bold;

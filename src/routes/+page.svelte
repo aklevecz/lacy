@@ -59,6 +59,9 @@
   .portrait > div {
     flex: 1 0 33%;
   }
+  .map {
+    height: 300px;
+  }
   .landscape .map {
     height: 90vh;
   }
