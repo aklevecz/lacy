@@ -34,14 +34,15 @@
     <img style="width:30px;height:30px;margin-bottom:-6px;" src="/icons/smiler.svg" alt="smiler"> 
   {/snippet}
   <footer style="display:{orientation === 'portrait' ? "block" : "none"};font-size:1.5rem;text-align:center;">
-   <div>{@render smilerSnip()} ~ LOS 2024 ~ {@render smilerSnip()}</div>
+   <div> Lacy Open Studios 2024 </div>
   </footer>
 <style>
 :global(.unit) {
     background: var(--accent-color);
     padding: .25rem .5rem;
     /* border-radius:30px; */
-    color: white;
+    color: var(--secondary-color);
+    font-weight: bold;
 }
 footer {
       background: var(--secondary-color);

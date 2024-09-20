@@ -117,6 +117,8 @@
     margin-bottom: 8px;
     order: 1;
     flex: 1 0 auto;
+    color:var(--secondary-color);
+    font-weight: 600;
     /* margin-right: 12px; */
   }
 
