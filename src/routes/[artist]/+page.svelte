@@ -21,7 +21,7 @@
 
   <meta property="og:title" content={capitalizeFirstLetter(artist?.name || "")} />
   <meta property="og:description" content={description} />
-  <meta property="og:image" content={domain + artist?.image ?? "/owl.png"} />
+  <meta property="og:image" content={domain + artist?.image} />
 </svelte:head>
 <div class="{orientation.state} container" style="">
   <!-- <a href="/" style="align-self:flex-start;position:absolute;right:.5rem;top:.5rem;text-decoration:underline;"
@@ -49,7 +49,7 @@
   padding:0 .5rem;
   "
     >
-      <div class="{orientation.state} description">{description}</div>
+      <div  class="{orientation.state} description">{@html description}</div>
       <!-- <div style="margin:1rem 0;" class="links">
       {#each artist?.links ?? [] as link}
         <a target="_blank" href={link.href}>{link.title}</a>

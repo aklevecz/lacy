@@ -75,11 +75,12 @@ const data = [
   },
   {
     unit: "205",
-    name: "swardy & rob w",
-    title: "film & music",
-    description: "sarah is a puppet master. swardy is a musician.",
-    image: null,
+    name: "swardy & rob w & sarah lew",
+    title: "film & music & puppets",
+    description: "sarah is a puppet master. swardy is a musician. rob writes and makes cool videos",
+    image: "artist/205/1.jpeg",
     links: [{ title: "@swardloop", href: "https://instagram.com/swardloop" },
+            { title: "@dumbbabyofficial", href: "https://instagram.com/dumbbabyofficial"},
             {title: "@duel_citizen", href:"https://instagram.com/duel_citizen"}],
   },
   {
@@ -119,10 +120,13 @@ const data = [
   },
   {
     unit: "304",
-    name: "joshua ballinger",
-    title: "Tea lounge and paintings",
-    description: "Joshua Ballinger is a filmmaker, painter, and musician",
-    links: [{title:"@documentingthelight", href:"https://instagram.com/documentingthelight"}],
+    name: "Documenting the Light",
+    title: "Filmaker/Photographer",
+    description: "Documenting the Light is the Film and Photography work of Joshua Ballinger. </br></br> Joshua fancies himself an artist, and considers photography his first medium: A tool that taught him as much about himself as the world around him. Documenting the Light started as a mantra, then it became a screen name, and now it’s my Brand. The perfect intersection of my love for cinematography and my perspective on life. I’ve spent the last 20 years shooting, producing, and editing videos for all the major publishers while developing my own style and Direction. </br></br> A place between lifestyle and documentary, art and commercial, narrative and prose.",
+    image:"artist/documenting-the-light/1.jpeg",
+    links: [{
+      title:"documentingthelight.com", href:"https://www.documentingthelight.com"},
+      {title:"@documentingthelight", href:"https://instagram.com/documentingthelight"}],
   },
   {
     unit: "305,306",
