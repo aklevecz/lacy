@@ -1,6 +1,6 @@
 <script>
   import ArtistList from "$lib/components/artist-list.svelte";
-  import Food from "$lib/components/food.svelte";
+  import FoodList from "$lib/components/food-list.svelte";
   import Smiler from "$lib/components/icons/smiler.svelte";
   import IndexInfo from "$lib/components/index-info.svelte";
   import LacyMap from "$lib/components/lacy-map.svelte";
@@ -46,7 +46,7 @@
       <IndexInfo />
     {/if}
     {#if view === 'food'}
-    <Food/>
+    <FoodList/>
     {/if}
   </div>
 </div>

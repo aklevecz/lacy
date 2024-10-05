@@ -4,31 +4,33 @@
   </script>
   
   <div style="display:flex;flex-direction:column;gap:.5rem;">
-    {#each data as artist}
-      <a href={`/${artist.name}`} class="artist">
+    {#each data as food}
+      <div class="food">
         <div style="display:flex;gap:.5rem;align-items: center;">
           <div class="unit">
-            <!-- {artist.unit} -->
-             {#each artist.unit.split(',') as unit}
+            <!-- {food.unit} -->
+             {#each food.unit.split(',') as unit}
               <div>{unit}</div>
             {/each}
           </div>
         </div>
         <div style="flex:0 0 70%;">
-          <h3>{capitalizeFirstLetter(artist.name)}</h3>
-          <div>{artist.title}</div>
+          <h3>{capitalizeFirstLetter(food.name)}</h3>
+          <!-- <div>{food.title}</div> -->
+          <a target="_blank" href={food.links[0].href}>{food.links[0].title}</a>
         </div>
-      </a>
+      </div>
     {/each}
   </div>
   
   <style>
     a {
+
+    }
+    .food { 
       display: flex;
       gap: 1rem;
       align-items: start;
-    }
-    .artist {
       /* border: 1px solid var(--accent-color); */
       padding: 0.5rem;
     }
