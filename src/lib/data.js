@@ -94,10 +94,10 @@ const data = [
   {
     unit: "212",
     name: "montana bertoletti",
-    title: "Mixed media artist / stop motion god ",
-    description: "Montana Bertoletti is a mixed media artist / stop motion god ",
-    image: null,
-    links: [{ title: "website", href: "/melon.webp" }],
+    title: "Mixed Media Artist",
+    description: "At loft 212 you’ll find a collection of mixed media collage art which is made through a process of photography, printing and painting on canvas, wood and other materials. </br></br> You’ll also see multiple video projections of stop motion animations. Some are stand alone pieces and others were made specifically for musicians. </br></br> There will be prints of selected art pieces available for $10.",
+    image: "artist/montana-bertoletti/montana.jpeg",
+    links: [{ title: "@themontanagram", href: "https://instagram.com/themontanagram" }],
   },
   {
     unit: "210",
