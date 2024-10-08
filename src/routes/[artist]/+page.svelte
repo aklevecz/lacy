@@ -12,7 +12,7 @@
  . 
 `;
 
-  let description = artist?.description || loremIpsum;
+  let description = artist?.description || "";
   let domain = "https://lacy-eqq.pages.dev";
 </script>
 
