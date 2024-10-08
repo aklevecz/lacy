@@ -39,7 +39,7 @@
   </div>
   <!-- <div>{artist?.unit}</div> -->
   <div class="content">
-    <img class="img {orientation.state}" alt="{artist?.name} the artist" src={artist?.image ?? "/owl.png"} style="" />
+    {#if artist?.image}<img class="img {orientation.state}" alt="{artist?.name} the artist" src={artist?.image} style="" />{/if}
     <!-- </div> -->
     <div
       style="

@@ -5,8 +5,10 @@ const data = [
     title: "onishi apparel",
     description: "taka is a fashion designer and artist.",
     image: null,
-    links: [{ title: "@takayuki.us", href: "https://instagram.com/takayuki.us" },
-            {title: "@onishi.us", href:"https://instagram.com/onishi.us"}],
+    links: [
+      { title: "@takayuki.us", href: "https://instagram.com/takayuki.us" },
+      { title: "@onishi.us", href: "https://instagram.com/onishi.us" },
+    ],
   },
   {
     unit: "104",
@@ -14,16 +16,19 @@ const data = [
     title: "musician",
     description: "beau bray is a musician.",
     image: null,
-    links: [{ title: "website", href: "/melon.webp" }],
+    links: [{ title: "@beaubray", href: "https://instagram.com/beaubray" }],
   },
   {
     unit: "109",
-    name: "ariel klevecz",
-    title: "interactive art",
+    name: "bao klevecz",
+    title: "magical dog",
     description:
-      "ariel klevecz is an interactive artist who creates installations and performances. He is interested in the intersection of art and technology. He is a member of the art collective, the lab. He is also a member of the art collective, the lab.",
+      "Bao is a magical dog who shares a window into his wild dreams. He and his dad have designed systems to visualize these dreams that generally begin normal and quickly turn strange and uncanny.",
     image: "/artist/bao-scientist.png",
-    links: [{ title: "yaytso.art", href: "https://yaytso.art" }],
+    links: [
+      { title: "yaytso.art", href: "https://yaytso.art" },
+      { title: "instaBao", href: "https://insta.baos.haus" },
+    ],
   },
   // {
   //   unit: "110",
@@ -47,6 +52,7 @@ const data = [
       { title: "@arinicholeartistry", href: "https://instagram.com/arinicholeartistry" },
       { title: "@nickvrunge", href: "https://instagram.com/nickvrunge" },
       { title: "@elliottevan", href: "https://instagram.com/elliottevan" },
+      { title: "@preytaxidermy", href: "https://instagram.com/preytaxidermy" },
     ],
   },
   {
@@ -57,14 +63,14 @@ const data = [
     image: null,
     links: [{ title: "@jordanservicephotography", href: "https://instagram.com/jordanservicephotography" }],
   },
-  {
-    unit: "203",
-    name: "perhacs studio",
-    title: "design",
-    description: "perhacs studio is a design studio.",
-    image: null,
-    links: [{ title: "@perhacs.studios", href: "https://instagram/perhacs.studios" }],
-  },
+  // {
+  //   unit: "203",
+  //   name: "perhacs studio",
+  //   title: "design",
+  //   description: "perhacs studio is a design studio.",
+  //   image: null,
+  //   links: [{ title: "@perhacs.studios", href: "https://instagram/perhacs.studios" }],
+  // },
   {
     unit: "204",
     name: "saiful haque",
@@ -77,35 +83,38 @@ const data = [
     unit: "205",
     name: "swardy & rob w & sarah lew",
     title: "film & music & puppets",
-    description: "sarah is a puppet master. swardy is a musician. rob writes and makes cool videos",
+    description: "sarah is a puppet master. swardy is a musician. rob writes and makes cool videos of various forms.",
     image: "artist/205/1.jpeg",
-    links: [{ title: "@swardloop", href: "https://instagram.com/swardloop" },
-            { title: "@dumbbabyofficial", href: "https://instagram.com/dumbbabyofficial"},
-            {title: "@duel_citizen", href:"https://instagram.com/duel_citizen"}],
+    links: [
+      { title: "@swardloop", href: "https://instagram.com/swardloop" },
+      { title: "@dumbbabyofficial", href: "https://instagram.com/dumbbabyofficial" },
+      { title: "@duel_citizen", href: "https://instagram.com/duel_citizen" },
+    ],
   },
-  {
-    unit: "209",
-    name: "paloma pajaro prey taxidermy",
-    title: "taxidermy studio",
-    description: "paloma pajaro is a taxidermist.",
-    image: null,
-    links: [{ title: "website", href: "/melon.webp" }],
-  },
+  // {
+  //   unit: "209",
+  //   name: "paloma pajaro prey taxidermy",
+  //   title: "taxidermy studio",
+  //   description: "paloma pajaro is a taxidermist.",
+  //   image: null,
+  //   links: [{ title: "website", href: "/melon.webp" }],
+  // },
   {
     unit: "212",
     name: "montana bertoletti",
     title: "Mixed Media Artist",
-    description: "At loft 212 you’ll find a collection of mixed media collage art which is made through a process of photography, printing and painting on canvas, wood and other materials. </br></br> You’ll also see multiple video projections of stop motion animations. Some are stand alone pieces and others were made specifically for musicians. </br></br> There will be prints of selected art pieces available for $10.",
+    description:
+      "At loft 212 you’ll find a collection of mixed media collage art which is made through a process of photography, printing and painting on canvas, wood and other materials. </br></br> You’ll also see multiple video projections of stop motion animations. Some are stand alone pieces and others were made specifically for musicians. </br></br> There will be prints of selected art pieces available for $10.",
     image: "artist/montana-bertoletti/montana.jpeg",
     links: [{ title: "@themontanagram", href: "https://instagram.com/themontanagram" }],
   },
   {
     unit: "210",
-    name:"jae seung lee",
-    title:"clothing / vintage shop",
+    name: "jae seung lee",
+    title: "clothing / vintage shop",
     description: "Clothing brand and vintage clothing",
     image: null,
-    links: [{ title: "@twofold_la", href: "https://instagram.com/twofold_la" }]
+    links: [{ title: "@twofold_la", href: "https://instagram.com/twofold_la" }],
   },
   {
     unit: "221",
@@ -116,17 +125,32 @@ const data = [
     links: [
       { title: "@kim.yayy", href: "https://instagram.com/kim.yayy" },
       { title: "nomadicvision.studio", href: "https://nomadicvision.studio" },
+      { title: "@scotthelman", href: "https://instagram.com/scotthelman" },
+      { title: "cestunpipe", href: "https://instagram.com/cestunpipe" },
     ],
+  },
+  {
+    unit: "301",
+    name: "Francisco Irving Malagon",
+    title: "",
+    description: "",
+    image: null,
+    links: [{ title: "@panchini_socal", href: "https://instagram.com/panchini_socal" }],
   },
   {
     unit: "304",
     name: "Documenting the Light",
     title: "Filmaker/Photographer",
-    description: "Documenting the Light is the Film and Photography work of Joshua Ballinger. </br></br> Joshua fancies himself an artist, and considers photography his first medium: A tool that taught him as much about himself as the world around him. Documenting the Light started as a mantra, then it became a screen name, and now it’s my Brand. The perfect intersection of my love for cinematography and my perspective on life. I’ve spent the last 20 years shooting, producing, and editing videos for all the major publishers while developing my own style and Direction. </br></br> A place between lifestyle and documentary, art and commercial, narrative and prose.",
-    image:"artist/documenting-the-light/1.jpeg",
-    links: [{
-      title:"documentingthelight.com", href:"https://www.documentingthelight.com"},
-      {title:"@documentingthelight", href:"https://instagram.com/documentingthelight"}],
+    description:
+      "Documenting the Light is the Film and Photography work of Joshua Ballinger. </br></br> Joshua fancies himself an artist, and considers photography his first medium: A tool that taught him as much about himself as the world around him. Documenting the Light started as a mantra, then it became a screen name, and now it’s my Brand. The perfect intersection of my love for cinematography and my perspective on life. I’ve spent the last 20 years shooting, producing, and editing videos for all the major publishers while developing my own style and Direction. </br></br> A place between lifestyle and documentary, art and commercial, narrative and prose.",
+    image: "artist/documenting-the-light/1.jpeg",
+    links: [
+      {
+        title: "documentingthelight.com",
+        href: "https://www.documentingthelight.com",
+      },
+      { title: "@documentingthelight", href: "https://instagram.com/documentingthelight" },
+    ],
   },
   {
     unit: "305,306",
