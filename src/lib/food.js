@@ -5,12 +5,12 @@ const foodData = [
     title: "Coffee by Gibert from Antigua Coffee Roasters",
     links: [{ title: "@antiguacoffeeroasters", href: "https://instagram.com/antiguacoffeeroasters" }],
   },
-  {
-    unit: "Picnic Area",
-    name: "Gyros",
-    title: "Good gyro food stuff",
-    links: [{ title: "@soulfoodgyros", href: "https://instagram.com/soulfoodgyros" }],
-  },
+  // {
+  //   unit: "Picnic Area",
+  //   name: "Gyros",
+  //   title: "Good gyro food stuff",
+  //   links: [{ title: "@soulfoodgyros", href: "https://instagram.com/soulfoodgyros" }],
+  // },
   {
     unit: "Picnic Area",
     name: "carnitas",
