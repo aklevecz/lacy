@@ -36,7 +36,7 @@
   <div class="after" style="">
     <nav style="display:flex;margin:1rem .5rem;gap:1rem;">
       <button class:active={view === "artists"} onclick={() => (view = "artists")}>ARTISTS</button>
-      <button class:active={view === "food"} onclick={() => (view = 'food')}>FOOD</button>
+      <button class:active={view === "food"} onclick={() => (view = 'food')}>FOOD/MUSIC</button>
       <button class:active={view === "info"} onclick={() => (view = "info")}>INFO</button>
     </nav>
     {#if view === "artists"}

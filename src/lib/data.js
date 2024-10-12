@@ -52,7 +52,6 @@ const data = [
       { title: "@arinicholeartistry", href: "https://instagram.com/arinicholeartistry" },
       { title: "@nickvrunge", href: "https://instagram.com/nickvrunge" },
       { title: "@elliottevan", href: "https://instagram.com/elliottevan" },
-      { title: "@preytaxidermy", href: "https://instagram.com/preytaxidermy" },
     ],
   },
   {
