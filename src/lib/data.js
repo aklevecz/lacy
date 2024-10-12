@@ -2,7 +2,7 @@ const data = [
   {
     unit: "102",
     name: "taka",
-    title: "onishi apparel",
+    title: "Onishi Apparel",
     description: "taka is a fashion designer and artist.",
     image: null,
     links: [
@@ -13,7 +13,7 @@ const data = [
   {
     unit: "104",
     name: "beau bray",
-    title: "musician",
+    title: "Musician",
     description: "beau bray is a musician.",
     image: null,
     links: [{ title: "@beaubray", href: "https://instagram.com/beaubray" }],
@@ -21,7 +21,7 @@ const data = [
   {
     unit: "109",
     name: "bao klevecz",
-    title: "magical dog",
+    title: "Magical Dog",
     description:
       "Bao is a magical dog who shares a window into his wild dreams. He and his dad have designed systems to visualize these dreams that generally begin normal and quickly turn strange and uncanny.",
     image: "/artist/bao-scientist.png",
@@ -41,7 +41,7 @@ const data = [
   {
     unit: "114",
     name: "S.A.P. Gallery",
-    title: "mixed media artist",
+    title: "Mixed Media Artist",
     description:
       "Welcome Super Apple Pie Gallery, Join us for an evening of diverse artistic expression. This group art show features a captivating mix of photography, paintings, and handmade clothing, exploring a range of adult themes. Experience a unique blend of creativity and craftsmanship, and engage with thought-provoking works that challenge and inspire. Don’t miss this opportunity to immerse yourself in an eclectic and dynamic collection of art. featuring artists",
     image: "/artist/sap.jpg",
@@ -58,8 +58,8 @@ const data = [
   {
     unit: "202",
     name: "jordan service",
-    title: "photography",
-    description: "Jodran Service is a photographer.",
+    title: "Photography",
+    description: "",
     image: null,
     links: [{ title: "@jordanservicephotography", href: "https://instagram.com/jordanservicephotography" }],
   },
@@ -74,21 +74,19 @@ const data = [
   {
     unit: "204",
     name: "saiful haque",
-    title: "artist",
-    description: "Saiful Haque is an artist.",
+    title: "Artist",
+    description: "",
     image: null,
     links: [{ title: "@saiful.haque", href: "https://instagram.com/saiful.haque" }],
   },
   {
     unit: "205",
-    name: "swardy & rob w & sarah lew",
-    title: "film & music & puppets",
-    description: "sarah is a puppet master. swardy is a musician. rob writes and makes cool videos of various forms.",
+    name: "Sarah Lew",
+    title: "Puppet Mistress",
+    description: "",
     image: "artist/205/1.jpeg",
     links: [
-      { title: "@swardloop", href: "https://instagram.com/swardloop" },
       { title: "@dumbbabyofficial", href: "https://instagram.com/dumbbabyofficial" },
-      { title: "@duel_citizen", href: "https://instagram.com/duel_citizen" },
     ],
   },
   // {
@@ -111,15 +109,15 @@ const data = [
   {
     unit: "210",
     name: "jae seung lee",
-    title: "clothing / vintage shop",
-    description: "Clothing brand and vintage clothing",
+    title: "Fashion / Vintage Shop",
+    description: "",
     image: null,
     links: [{ title: "@twofold_la", href: "https://instagram.com/twofold_la" }],
   },
   {
     unit: "221",
     name: "sion kim",
-    title: "tattoo artist",
+    title: "Tattoo Artist",
     description: "I draw on people and bring invisible thoughts to visible expressions.",
     image: null,
     links: [
@@ -155,8 +153,8 @@ const data = [
   {
     unit: "305,306",
     name: "ms robot",
-    title: "production studio",
-    description: "ms robot is a production studio.",
+    title: "Production Studio",
+    description: "",
     image: null,
     links: [{ title: "@ms_robot", href: "https://instagram.com/ms_robot" }],
   },
