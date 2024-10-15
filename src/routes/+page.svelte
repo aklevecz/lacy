@@ -25,7 +25,6 @@
     <LacyMap style="" />
   </div>
   <div class="after" style="">
-    <nav style="display:flex; margin:1rem .5rem; gap:1rem;"></nav>
     {#if view === "artists"}
       <ArtistList />
     {/if}
@@ -60,7 +59,7 @@
 
   @media (min-width: 768px) {
     .after {
-      padding: 0 4rem;
+      padding: 0 3rem;
     }
   }
 
