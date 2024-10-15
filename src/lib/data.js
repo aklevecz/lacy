@@ -48,10 +48,6 @@ const data = [
     links: [
       { title: "superapplepieartgallery.com", href: "https://www.superapplepieartgallery.com" },
       { title: "@superapplepiegallery", href: "https://instagram.com/superapplepiegallery" },
-      { title: "@divalicious", href: "https://instagram.com/divalicious" },
-      { title: "@arinicholeartistry", href: "https://instagram.com/arinicholeartistry" },
-      { title: "@nickvrunge", href: "https://instagram.com/nickvrunge" },
-      { title: "@elliottevan", href: "https://instagram.com/elliottevan" },
     ],
   },
   {
@@ -122,8 +118,6 @@ const data = [
     links: [
       { title: "@kim.yayy", href: "https://instagram.com/kim.yayy" },
       { title: "nomadicvision.studio", href: "https://nomadicvision.studio" },
-      { title: "@scotthelman", href: "https://instagram.com/scotthelman" },
-      { title: "cestunpipe", href: "https://instagram.com/cestunpipe" },
     ],
   },
   {
