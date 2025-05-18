@@ -31,7 +31,7 @@ const data = [
     name: "ariel klevecz",
     title: "mad scientist",
     description:
-      "Bao is a magical dog who shares a window into his wild dreams. He and his dad have designed systems to visualize these dreams that generally begin normal and quickly turn strange and uncanny.",
+      "is onto something...",
     image: "/artist/bao-scientist.png",
     links: [
       { title: "yaytso.art", href: "https://yaytso.art" },
