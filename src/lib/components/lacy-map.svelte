@@ -18,6 +18,7 @@
         let unitPrefix = "unit_x5F_";
         unitPrefix = "unit_";
         const unitNumber = unitRec.id.replace(unitPrefix, "");
+        console.log(unitNumber)
         const artist = data.find((artist) => artist.unit === unitNumber);
 
         if (artist) {
@@ -1239,7 +1240,7 @@ Parking"
         <rect id="unit_220" x="669.22" y="8.2" width="77.18" height="208.46" fill="none" stroke-width="0" />
         <rect id="unit_221" x="746.39" y="8.2" width="77.18" height="208.46" fill="none" stroke-width="0" />
         <rect id="unit_222" x="823.57" y="8.2" width="77.18" height="208.46" fill="none" stroke-width="0" />
-        <rect id="unit_306305" x="72.34" y="227.63" width="226.6" height="140.77" fill="none" stroke-width="0" />
+        <rect id="unit_306,305" x="72.34" y="227.63" width="226.6" height="140.77" fill="none" stroke-width="0" />
         <rect id="unit_304" x="72.34" y="368.66" width="226.6" height="78.7" fill="none" stroke-width="0" />
         <rect id="unit_303" x="72.34" y="447.63" width="226.6" height="78.7" fill="none" stroke-width="0" />
         <rect id="unit_302" x="72.34" y="526.59" width="226.6" height="78.7" fill="none" stroke-width="0" />

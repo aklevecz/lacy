@@ -15,8 +15,8 @@
         </div>
       </div>
       <div>
-        <h3>{capitalizeFirstLetter(artist.name)}</h3>
-        <div>{artist.title}</div>
+        <h3>{capitalizeFirstLetter(artist.name || artist.links[0].title)}</h3>
+        <div>{artist.title }</div>
       </div>
     </a>
   {/each}

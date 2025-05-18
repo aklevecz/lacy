@@ -19,9 +19,17 @@ const data = [
     links: [{ title: "@beaubray", href: "https://instagram.com/beaubray" }],
   },
   {
+    unit: "107",
+    name: "",
+    title: "",
+    description: "",
+    image: null,
+    links: [{ title: "@danielle___armstrong", href: "https://www.instagram.com/danielle___armstrong" }],
+  },
+  {
     unit: "109",
-    name: "bao klevecz",
-    title: "Magical Dog",
+    name: "ariel klevecz",
+    title: "mad scientist",
     description:
       "Bao is a magical dog who shares a window into his wild dreams. He and his dad have designed systems to visualize these dreams that generally begin normal and quickly turn strange and uncanny.",
     image: "/artist/bao-scientist.png",
@@ -29,6 +37,14 @@ const data = [
       { title: "yaytso.art", href: "https://yaytso.art" },
       { title: "instaBao", href: "https://insta.baos.haus" },
     ],
+  },
+  {
+    unit: "110",
+    name: "",
+    title: "",
+    description: "",
+    image: null,
+    links: [{ title: "@lilpony666", href: "https://www.instagram.com/lilpony666" }],
   },
   // {
   //   unit: "110",
@@ -80,9 +96,7 @@ const data = [
     title: "Puppet Mistress",
     description: "",
     image: "artist/205/1.jpeg",
-    links: [
-      { title: "@dumbbabyofficial", href: "https://instagram.com/dumbbabyofficial" },
-    ],
+    links: [{ title: "@dumbbabyofficial", href: "https://instagram.com/dumbbabyofficial" }],
   },
   // {
   //   unit: "209",
@@ -107,7 +121,17 @@ const data = [
     title: "Fashion / Vintage Shop",
     description: "",
     image: null,
-    links: [{ title: "@twofold_la", href: "https://instagram.com/twofold_la" }],
+    links: [
+      { title: "@jaeseung_lee_", href: "https://www.instagram.com/jaeseung_lee_" },
+      { title: "@twofold_la", href: "https://instagram.com/twofold_la" },
+    ],
+  },
+  {
+    unit: "213",
+    name: "",
+    description: "",
+    image: null,
+    links: [{ title: "@adammatanosculpture", href: "https://www.instagram.com/adammatanosculpture" }],
   },
   {
     unit: "221",
@@ -144,7 +168,7 @@ const data = [
     ],
   },
   {
-    unit: "305,306",
+    unit: "306,305",
     name: "ms robot",
     title: "Production Studio",
     description: "",
