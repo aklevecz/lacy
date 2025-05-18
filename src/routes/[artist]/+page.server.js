@@ -3,7 +3,7 @@ import data from '$lib/data';
 /** @type {import('./$types').EntryGenerator} */
 export function entries() {
 	const artistNames = data.map((artist) => ({
-		artist: artist.name
+		artist: artist.name || artist.links[0].title
 	}));
 	return artistNames;
 }
