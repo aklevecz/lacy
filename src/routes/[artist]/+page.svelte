@@ -12,13 +12,16 @@
 `;
 
   let description = artist?.description || "";
-  let domain = "https://lacy-eqq.pages.dev";
+  let domain = "https://lacy-studios.com";
 </script>
 
 <svelte:head>
   <title>{capitalizeFirstLetter(artist?.name || "")}</title>
 
-  <meta property="og:title" content={capitalizeFirstLetter(artist?.name || "")} />
+  <meta
+    property="og:title"
+    content={capitalizeFirstLetter(artist?.name || "")}
+  />
   <meta property="og:description" content={description} />
   <meta property="og:image" content={domain + artist?.image} />
 </svelte:head>
@@ -38,7 +41,12 @@
   </div>
   <!-- <div>{artist?.unit}</div> -->
   <div class="content">
-    {#if artist?.image}<img class="img {orientation.state}" alt="{artist?.name} the artist" src={artist?.image} style="" />{/if}
+    {#if artist?.image}<img
+        class="img {orientation.state}"
+        alt="{artist?.name} the artist"
+        src={artist?.image}
+        style=""
+      />{/if}
     <!-- </div> -->
     <div
       style="
@@ -48,7 +56,7 @@
   padding:0 .5rem;
   "
     >
-      <div  class="{orientation.state} description">{@html description}</div>
+      <div class="{orientation.state} description">{@html description}</div>
       <!-- <div style="margin:1rem 0;" class="links">
       {#each artist?.links ?? [] as link}
         <a target="_blank" href={link.href}>{link.title}</a>
@@ -65,14 +73,22 @@
     align-items: center;"
       >
         {#each artist?.links ?? [] as link}
-          <a class="link-button" href={link.href}>{link.title}</a>
+          <a class="link-button" target="_blank" href={link.href}>{link.title}</a>
         {/each}
       </div>
     </div>
   </div>
 </div>
 <div style="margin:1rem;">
-  <a href="/" style="align-self:flex-start;text-decoration:none;font-weight:500;font-size:1.25rem;"><img style="width:30px;height:30px;" src="/icons/back-arrow.svg" alt="back arrow"> to Map</a>
+  <a
+    href="/"
+    style="align-self:flex-start;text-decoration:none;font-weight:500;font-size:1.25rem;"
+    ><img
+      style="width:30px;height:30px;"
+      src="/icons/back-arrow.svg"
+      alt="back arrow"
+    /> to Map</a
+  >
 </div>
 
 <style>
@@ -91,7 +107,7 @@
   .top {
     flex: 0 0 50%;
   }
-  
+
   .landscape .top-line {
     display: flex;
     flex: 0 0 100%;
@@ -116,7 +132,7 @@
     margin-bottom: 8px;
     order: 1;
     flex: 1 0 auto;
-    color:var(--secondary-color);
+    color: var(--secondary-color);
     font-weight: 600;
     /* margin-right: 12px; */
   }
@@ -126,7 +142,7 @@
     align-items: center;
     gap: 1rem;
     margin-bottom: 0.75rem;
-    order:0;
+    order: 0;
   }
 
   .img {
@@ -144,7 +160,7 @@
   .description {
     font-size: 1.5rem;
     line-height: calc(1.5rem * 1.1);
-    margin-top:1rem;
+    margin-top: 1rem;
     margin-bottom: 1rem;
   }
 
