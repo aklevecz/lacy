@@ -31,20 +31,24 @@
       <div class="section">
         <h4>Courtyard Foods</h4>
         <div class="items">
-          <div class="item">
-            <span class="name">Witchies</span>
-            <span class="type">sandwiches @eatwitchies</span>
+          <div class="item col">
+            <div class="name">Witchies</div>
+            <div class="type">by Sophia Park and Ramiro Zapatta - actual sandwiches, to eat! <a href="https://instagram.com/eatwitchies" target="_blank">@eatwitchies</a> Featuring sweets by Paru - cookies, bars and bites with Filipino & other Asian flavor influences Social media <a href="https://instagram.com/paru_frances" target="_blank">@paru_frances</a></div>
           </div>
-          <div class="item">
-            <span class="name">Paru</span>
-            <span class="type">Filipino sweets @paru_frances</span>
-          </div>
+          <!-- <div class="item col" style="margin-top: 0.5rem;">
+            <div class="name">Paru</div>
+            <div class="type">Filipino sweets <a href="https://instagram.com/paru_frances" target="_blank">@paru_frances</a></div>
+          </div> -->
         </div>
       </div>
 
       <div class="section">
         <h4>Music Schedule</h4>
         <div class="items">
+          <div class="item">
+            <span class="time">4:30</span>
+            <span class="name">Loop Goat</span>
+          </div>
           <div class="item">
             <span class="time">5:30</span>
             <span class="name">Paul Lai</span>
@@ -119,6 +123,12 @@
     gap: 0.5rem;
     align-items: center;
     font-size: 0.9rem;
+  }
+
+  .col {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0rem;
   }
 
   .time {

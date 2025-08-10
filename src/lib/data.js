@@ -1,15 +1,15 @@
 const data = [
-  {
-    unit: "102",
-    name: "taka",
-    title: "Onishi Apparel",
-    description: "taka is a fashion designer and artist.",
-    image: null,
-    links: [
-      { title: "@takayuki.us", href: "https://instagram.com/takayuki.us" },
-      { title: "@onishi.us", href: "https://instagram.com/onishi.us" },
-    ],
-  },
+  // {
+  //   unit: "102",
+  //   name: "taka",
+  //   title: "Onishi Apparel",
+  //   description: "taka is a fashion designer and artist.",
+  //   image: null,
+  //   links: [
+  //     { title: "@takayuki.us", href: "https://instagram.com/takayuki.us" },
+  //     { title: "@onishi.us", href: "https://instagram.com/onishi.us" },
+  //   ],
+  // },
   {
     unit: "104",
     name: "beau bray",
@@ -21,7 +21,7 @@ const data = [
   {
     unit: "107",
     name: "Danielle Armstrong",
-    title: "",
+    title: "Prop styling / photography",
     description: "Prop styling / photography",
     image: null,
     links: [{ title: "@danielle___armstrong", href: "https://www.instagram.com/danielle___armstrong" }, { title: "daniellestyles.com", href: "https://www.daniellestyles.com" }],
@@ -29,7 +29,7 @@ const data = [
   {
     unit: "110",
     name: "Adam & Suezy",
-    title: "",
+    title: "crochet, caipirinhas & thrifting",
     description: "Caipirinhas, thrifting and music",
     image: null,
     links: [{ title: "@lilpony666", href: "https://www.instagram.com/lilpony666" }, { title: "@internetritual", href: "https://www.instagram.com/internetritual" }],
@@ -47,7 +47,7 @@ const data = [
     name: "S.A.P. Gallery",
     title: "Mixed Media Artist",
     description:
-      "Mixed media Group art show with photo's, paintings, miniatures, adult in nature and full of whimsy.",
+      "A Group Art show with mixed themes and materials featuring Artists Michael Schmidt, S.A.P., Ari Nichole, Nick Runge, Enrique Becerra, Elliott Giffis and other fun Goodies",
     image: "/artist/sap.jpg",
     links: [
       { title: "superapplepieartgallery.com", href: "https://www.superapplepieartgallery.com" },
@@ -102,14 +102,14 @@ const data = [
     image: null,
     links: [{ title: "@saiful.haque", href: "https://instagram.com/saiful.haque" }],
   },
-  {
-    unit: "205",
-    name: "Sarah Lew",
-    title: "Puppet Mistress",
-    description: "",
-    image: "artist/205/1.jpeg",
-    links: [{ title: "@dumbbabyofficial", href: "https://instagram.com/dumbbabyofficial" }],
-  },
+  // {
+  //   unit: "205",
+  //   name: "Sarah Lew",
+  //   title: "Puppet Mistress",
+  //   description: "",
+  //   image: "artist/205/1.jpeg",
+  //   links: [{ title: "@dumbbabyofficial", href: "https://instagram.com/dumbbabyofficial" }],
+  // },
   {
     unit: "209",
     name: "Prey Taxidermy",
@@ -118,15 +118,15 @@ const data = [
     image: null,
     links: [{ title: "PreyTaxidermy.com", href: "https://PreyTaxidermy.com" }],
   },
-  {
-    unit: "212",
-    name: "montana bertoletti",
-    title: "Mixed Media Artist",
-    description:
-      "At loft 212 you’ll find a collection of mixed media collage art which is made through a process of photography, printing and painting on canvas, wood and other materials. </br></br> You’ll also see multiple video projections of stop motion animations. Some are stand alone pieces and others were made specifically for musicians. </br></br> There will be prints of selected art pieces available for $10.",
-    image: "artist/montana-bertoletti/montana.jpeg",
-    links: [{ title: "@themontanagram", href: "https://instagram.com/themontanagram" }],
-  },
+  // {
+  //   unit: "212",
+  //   name: "montana bertoletti",
+  //   title: "Mixed Media Artist",
+  //   description:
+  //     "At loft 212 you’ll find a collection of mixed media collage art which is made through a process of photography, printing and painting on canvas, wood and other materials. </br></br> You’ll also see multiple video projections of stop motion animations. Some are stand alone pieces and others were made specifically for musicians. </br></br> There will be prints of selected art pieces available for $10.",
+  //   image: "artist/montana-bertoletti/montana.jpeg",
+  //   links: [{ title: "@themontanagram", href: "https://instagram.com/themontanagram" }],
+  // },
   {
     unit: "210",
     name: "Jae Seung Lee",
@@ -149,30 +149,34 @@ const data = [
   {
     unit: "215",
     name: "Workplace Romance",
-    title: "Hand-tufted Rugs",
-    description: "Workplace Romance is a study in restraint and rebellion. Hand-tufted by Rachel Shin and Revel Rosa, each one-of-a-kind rug blends bold imagery with subtle tension. Made for eclectic homes and the people who shape them.",
+    title: "Workplace Romance",
+    description: "Workplace Romance is the collaborative rug studio of Rachel Shin and Revel Rosa. Each hand-tufted piece is designed and made once, one of one, never again. Made for eclectic homes and the people who shape them.",
     image: null,
     links: [{ title: "workplaceromancethebrand.com", href: "https://workplaceromancethebrand.com" }],
   },
   {
     unit: "221",
     name: "sion kim & justin yook",
-    title: "Tattoo Artist / Creative Collective",
-    description: "I draw on people and bring invisible thoughts to visible expressions. Group of friends that want to make cool things. Collective of young creatives sharing what they love to others to enjoy!",
+    title: "sion kim & justin yook",
+    description: "Collective of young creatives sharing what they love to others to enjoy!",
     image: null,
     links: [
       { title: "@kim.yayy", href: "https://instagram.com/kim.yayy" },
       { title: "@yook.noir", href: "https://instagram.com/yook.noir" },
-      { title: "nomadicvision.studio", href: "https://nomadicvision.studio" },
+      { title: "@sogum.xyz", href: "https://instagram.com/sogum.xyz" },
+      { title: "@zookidkrule", href: "https://instagram.com/zookidkrule" },
+      { title: "@lleejjeanne", href: "https://instagram.com/lleejjeanne" },
+      { title: "@sydneytsay", href: "https://instagram.com/sydneytsay" },
+      { title: "@obvlee", href: "https://instagram.com/obvlee" },
     ],
   },
   {
     unit: "301",
-    name: "Francisco Irving Malagon",
-    title: "",
+    name: "Frank Irving",
+    title: "Stock market day trader / Mentor",
     description: "",
     image: null,
-    links: [{ title: "@panchini_socal", href: "https://instagram.com/panchini_socal" }],
+    links: [{ title: "@panchinilive", href: "https://www.tiktok.com/@panchinilive" }],
   },
   {
     unit: "304",
@@ -190,7 +194,7 @@ const data = [
     ],
   },
   {
-    unit: "305/306",
+    unit: "305&306",
     name: "nate fu",
     title: "Production Studio",
     description: "Creative space for video and art",

@@ -21,7 +21,7 @@
         console.log(unitNumber)
         const artist = data.find((artist) => artist.unit === unitNumber);
 
-        if (artist) {
+        if (artist || unitNumber === "306,305") {
           unitRec.style.fill = "white";
           unitRec.style.opacity = "0.25";
         } else {
