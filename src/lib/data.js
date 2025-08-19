@@ -155,6 +155,14 @@ const data = [
     links: [{ title: "workplaceromancethebrand.com", href: "https://workplaceromancethebrand.com" }],
   },
   {
+    unit: "219",
+    name: "Katie Goodfellow",
+    title: "Stylist and costume designer",
+    description: "Stylist and costume designer selling vintage and handmade knitwear!",
+    image: null,
+    links: [{ title: "katiegoodfellow.com", href: "https://www.katiegoodfellow.com" }],
+  },
+  {
     unit: "221",
     name: "sion kim & justin yook",
     title: "sion kim & justin yook",

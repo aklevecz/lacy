@@ -33,7 +33,7 @@
         <div class="items">
           <div class="item col">
             <div class="name">Witchies</div>
-            <div class="type">by Sophia Park and Ramiro Zapatta - actual sandwiches, to eat! <a href="https://instagram.com/eatwitchies" target="_blank">@eatwitchies</a> Featuring sweets by Paru - cookies, bars and bites with Filipino & other Asian flavor influences Social media <a href="https://instagram.com/paru_frances" target="_blank">@paru_frances</a></div>
+            <div class="type">by Sophia Park and Ramiro Zapatta - actual sandwiches, to eat! <a href="https://instagram.com/eatwitchies" target="_blank">@eatwitchies</a> Plus sweet treats, bars and small bites</div>
           </div>
           <!-- <div class="item col" style="margin-top: 0.5rem;">
             <div class="name">Paru</div>
